@@ -13,7 +13,7 @@ import 'waiting/waiting.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //await Loading().upload();
+  // //await Loading().upload();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

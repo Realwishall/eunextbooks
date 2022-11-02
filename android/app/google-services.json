@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "902474422392",
+    "firebase_url": "https://allquestionbackup-default-rtdb.firebaseio.com",
+    "project_id": "allquestionbackup",
+    "storage_bucket": "allquestionbackup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902474422392:android:43a51228f3ef7e1e7e758d",
+        "android_client_info": {
+          "package_name": "com.euneext.book.eunextbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902474422392-1rbl3pq4j8mnvg42dkvhta60ktt744ek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqTwDm9fK8Wv30gzUIGQz9hlQc3UFvNJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902474422392-1rbl3pq4j8mnvg42dkvhta60ktt744ek.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "902474422392-emjudu5q9dbftamo1g1pant5488p1gfe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.euneext.book.eunextbook"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

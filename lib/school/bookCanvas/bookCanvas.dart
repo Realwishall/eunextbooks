@@ -26,7 +26,6 @@ class BookView extends StatelessWidget {
               color: Color(0xFFf3f3f3),
               borderRadius: BorderRadius.all(Radius.circular(16.0))),
           child: Obx(() {
-            canvasController.index.value;
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: canvasController.index.value == null
@@ -69,52 +68,65 @@ class BookView extends StatelessWidget {
                             const Divider(),
                             SizedBox(
                               height: 160,
-                              child: ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (context, index) {
-                                  Subject sub = classBook.subjects[index];
-                                  return Obx(() {
-                                    return GestureDetector(
-                                      onTap: () {
-                                        bookViewController
-                                            .currentSubjectIndex.value = index;
-                                      },
-                                      child: Padding(
-                                        padding: index == 0
-                                            ? const EdgeInsets.fromLTRB(
-                                                0, 8, 8, 8)
-                                            : const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          children: [
-                                            SizedBox(
-                                              height: 120,
-                                              width: 120,
-                                              child: Stack(
+                              child: Row(
+                                children: [
+                                  SelctedBookCover(
+                                      bookViewController: bookViewController),
+                                  Expanded(
+                                    child: ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      itemBuilder: (context, index) {
+                                        Subject sub = classBook.subjects[index];
+                                        return Obx(() {
+                                          return GestureDetector(
+                                            onTap: () {
+                                              bookViewController
+                                                  .currentSubjectIndex
+                                                  .value = index;
+                                            },
+                                            child: Padding(
+                                              padding: index == 0
+                                                  ? const EdgeInsets.fromLTRB(
+                                                      0, 8, 8, 8)
+                                                  : const EdgeInsets.all(8.0),
+                                              child: Column(
                                                 children: [
-                                                  Transform(
-                                                    transform: isSelctededIndex(
-                                                            index)
-                                                        ? Matrix4.identity()
-                                                        : Matrix4.identity()
-                                                      ..setEntry(3, 2, 0.01),
-                                                    child: Align(
-                                                      child: Image.asset(
-                                                          bookCoverList[index %
-                                                              bookCoverList
-                                                                  .length]),
+                                                  SizedBox(
+                                                    height: 120,
+                                                    width: 120,
+                                                    child: Stack(
+                                                      children: [
+                                                        Transform(
+                                                          transform:
+                                                              isSelctededIndex(
+                                                                      index)
+                                                                  ? Matrix4
+                                                                      .identity()
+                                                                  : Matrix4
+                                                                      .identity()
+                                                                ..setEntry(
+                                                                    3, 2, 0.01),
+                                                          child: Align(
+                                                            child: Image.asset(
+                                                                bookCoverList[index %
+                                                                    bookCoverList
+                                                                        .length]),
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
+                                                  Text(sub.subject)
                                                 ],
                                               ),
                                             ),
-                                            Text(sub.subject)
-                                          ],
-                                        ),
-                                      ),
-                                    );
-                                  });
-                                },
-                                itemCount: classBook.subjects.length,
+                                          );
+                                        });
+                                      },
+                                      itemCount: classBook.subjects.length,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                             Row(
@@ -136,61 +148,10 @@ class BookView extends StatelessWidget {
                             ),
                             if (bookViewController.currentSubjectIndex.value !=
                                 null)
-                              Expanded(
-                                child: SingleChildScrollView(
-                                  child: StreamBuilder<
-                                          DocumentSnapshot<
-                                              Map<String, dynamic>>?>(
-                                      stream: FireReadApi.getBookChapter(
-                                          canvasController
-                                              .allBooks!
-                                              .allBooks[
-                                                  canvasController.index.value!]
-                                              .id,
-                                          classBook
-                                              .subjects[bookViewController
-                                                  .currentSubjectIndex.value!]
-                                              .id),
-                                      builder: (context, snapshot) {
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                              child:
-                                                  const CircularProgressIndicator());
-                                        }
-                                        if (!snapshot.data!.exists) {
-                                          return const ErrorLogout();
-                                        }
-                                        SubjectBook subBook =
-                                            SubjectBook.fromMap(
-                                                snapshot.data!.data()!);
-                                        return DataTable(
-                                            columns: const [
-                                              DataColumn(label: Text("Index")),
-                                              DataColumn(
-                                                  label: Text("Chapter")),
-                                              DataColumn(
-                                                  label:
-                                                      Text("Exam Paper Maker")),
-                                            ],
-                                            rows: subBook.chapters
-                                                .mapIndexed((index, e) =>
-                                                    DataRow(cells: [
-                                                      DataCell(Text((index + 1)
-                                                          .toString())),
-                                                      DataCell(Text(e.name)),
-                                                      DataCell(e
-                                                              .testPaperGenrater
-                                                              .isNotEmpty
-                                                          ? TextButton(
-                                                              onPressed: () {},
-                                                              child: Text(
-                                                                  "Download"))
-                                                          : Text("")),
-                                                    ]))
-                                                .toList());
-                                      }),
-                                ),
-                              )
+                              ShowChapterList(
+                                  canvasController: canvasController,
+                                  classBook: classBook,
+                                  bookViewController: bookViewController)
                           ],
                         );
                       }),
@@ -203,6 +164,90 @@ class BookView extends StatelessWidget {
 
   bool isSelctededIndex(int index) {
     return bookViewController.currentSubjectIndex.value == index;
+  }
+}
+
+class ShowChapterList extends StatelessWidget {
+  const ShowChapterList({
+    Key? key,
+    required this.canvasController,
+    required this.classBook,
+    required this.bookViewController,
+  }) : super(key: key);
+
+  final CanvasController canvasController;
+  final ClassBook classBook;
+  final BookViewController bookViewController;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Obx(() {
+        return SingleChildScrollView(
+          child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>?>(
+              stream: FireReadApi.getBookChapter(
+                  canvasController
+                      .allBooks!.allBooks[canvasController.index.value!].id,
+                  classBook
+                      .subjects[bookViewController.currentSubjectIndex.value!]
+                      .id),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return Center(child: const CircularProgressIndicator());
+                }
+                if (!snapshot.data!.exists) {
+                  return const ErrorLogout();
+                }
+                SubjectBook subBook =
+                    SubjectBook.fromMap(snapshot.data!.data()!);
+                return DataTable(
+                    columns: const [
+                      DataColumn(label: Text("Index")),
+                      DataColumn(label: Text("Chapter")),
+                      DataColumn(label: Text("Exam Paper Maker")),
+                    ],
+                    rows: subBook.chapters
+                        .mapIndexed((index, e) => DataRow(cells: [
+                              DataCell(Text((index + 1).toString())),
+                              DataCell(Text(e.name)),
+                              DataCell(e.testPaperGenrater.isNotEmpty
+                                  ? TextButton(
+                                      onPressed: () {}, child: Text("Download"))
+                                  : Text("")),
+                            ]))
+                        .toList());
+              }),
+        );
+      }),
+    );
+  }
+}
+
+class SelctedBookCover extends StatelessWidget {
+  const SelctedBookCover({
+    Key? key,
+    required this.bookViewController,
+  }) : super(key: key);
+
+  final BookViewController bookViewController;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSwitcher(
+      transitionBuilder: (currentChild, animation) {
+        print(animation);
+        return ScaleTransition(scale: animation, child: currentChild);
+      },
+      duration: const Duration(seconds: 10),
+      child: Obx(() {
+        return SizedBox(
+          width: 100,
+          child: Image.asset(bookCoverList[
+              bookViewController.currentSubjectIndex.value! %
+                  bookCoverList.length]),
+        );
+      }),
+    );
   }
 }
 

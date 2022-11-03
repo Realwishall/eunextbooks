@@ -17,3 +17,5 @@ class DataBaseString {
   static String evs = "evs";
   static String computer = "computer";
 }
+
+List<String> bookCoverList = ["asset/book1.png", "asset/book2.png"];

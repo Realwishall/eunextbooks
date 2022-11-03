@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../model/classBook.dart';
+import '../../service/databaseString.dart';
 import '../../service/readDataBase.dart';
 import '../../waiting/waiting.dart';
 import '../../widget/errorLogout.dart';
@@ -83,9 +84,10 @@ class BookView extends StatelessWidget {
                                       child: Column(
                                         children: [
                                           Container(
-                                            color: Colors.black12,
                                             width: 80,
                                             height: 80,
+                                            child: Image.asset(bookCoverList[
+                                                index % bookCoverList.length]),
                                           ),
                                           Text(sub.subject)
                                         ],

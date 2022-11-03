@@ -7,13 +7,14 @@ import 'package:get/get.dart';
 import 'package:oktoast/oktoast.dart';
 
 import 'admin/admin.dart';
+import 'create/loadData.dart';
 import 'firebase_options.dart';
 import 'login/login.dart';
 import 'waiting/waiting.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // //await Loading().upload();
+  Loading().upload();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

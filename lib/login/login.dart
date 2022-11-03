@@ -20,30 +20,36 @@ class LoginPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Image(image: AssetImage("asset/logo.png")),
-            const SizedBox(
-              height: 6,
+            Spacer(
+              flex: 1,
             ),
             const Text(
               'LOGIN ',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
             ),
-            const SizedBox(
-              height: 6,
+            Spacer(
+              flex: 1,
             ),
             const Opacity(
                 opacity: 0.4,
                 child: Text(
                   'Login here to get access Books',
                 )),
-            const SizedBox(
-              height: 20,
+            Spacer(
+              flex: 1,
+            ),
+            Spacer(
+              flex: 1,
+            ),
+            Spacer(
+              flex: 1,
             ),
             const Text(
               'EuNext Email ID',
               style: TextStyle(color: Colors.black),
             ),
-            const SizedBox(
-              height: 6,
+            Spacer(
+              flex: 1,
             ),
             TextField(
               controller: loginPageController.userId,
@@ -53,15 +59,15 @@ class LoginPage extends StatelessWidget {
                 border: OutlineInputBorder(),
               ),
             ),
-            const SizedBox(
-              height: 8,
+            Spacer(
+              flex: 1,
             ),
             const Text(
               'Password',
               style: TextStyle(color: Colors.black),
             ),
-            const SizedBox(
-              height: 8,
+            Spacer(
+              flex: 1,
             ),
             Obx(() {
               return TextField(
@@ -81,8 +87,23 @@ class LoginPage extends StatelessWidget {
                             : const Icon(Icons.visibility_off))),
               );
             }),
-            const SizedBox(
-              height: 36,
+            Spacer(
+              flex: 1,
+            ),
+            Spacer(
+              flex: 1,
+            ),
+            Spacer(
+              flex: 1,
+            ),
+            Spacer(
+              flex: 1,
+            ),
+            Spacer(
+              flex: 1,
+            ),
+            Spacer(
+              flex: 1,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18.0),
@@ -93,14 +114,23 @@ class LoginPage extends StatelessWidget {
                     child: Center(child: Text('Login')),
                   )),
             ),
-            const SizedBox(
-              height: 26,
+            Spacer(
+              flex: 1,
+            ),
+            Spacer(
+              flex: 1,
+            ),
+            Spacer(
+              flex: 1,
+            ),
+            Spacer(
+              flex: 1,
             ),
             const Center(
               child: Text('-OR-'),
             ),
-            const SizedBox(
-              height: 8,
+            Spacer(
+              flex: 1,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -111,6 +141,9 @@ class LoginPage extends StatelessWidget {
                       'Login into demo account ',
                     )),
               ],
+            ),
+            Spacer(
+              flex: 1,
             ),
           ],
         ),

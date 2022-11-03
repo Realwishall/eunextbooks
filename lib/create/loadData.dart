@@ -67,6 +67,18 @@ ClassBook Class1 = ClassBook(subjects: [
   Subject(coverPage: "coverPage", subject: "Science Era", id: "Class1Science"),
   Subject(
       coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
+  Subject(
+      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
+  Subject(
+      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
+  Subject(
+      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
+  Subject(
+      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
+  Subject(
+      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
+  Subject(
+      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
 ]);
 
 SubjectBook Class1Science = SubjectBook(chapters: [

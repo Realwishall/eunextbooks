@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
 class MyLayout extends StatelessWidget {
   MyLayout({Key? key, required this.mainLayout, this.smallLayout})
@@ -9,7 +10,7 @@ class MyLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraint) {
-      if (constraint.maxWidth < 600 && smallLayout != null) {
+      if (Get.size.width < 600 && smallLayout != null) {
         return smallLayout!;
       } else {
         return mainLayout;

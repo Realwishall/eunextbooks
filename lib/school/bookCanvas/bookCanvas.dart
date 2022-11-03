@@ -167,14 +167,38 @@ class BookView extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(16.0))),
           child: Column(
             children: [
-              AppBar(
-                leading: GestureDetector(
-                  child: const Icon(Icons.menu),
-                  onTap: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                ),
-              ),
+              Obx(() {
+                return AppBar(
+                  title: (canvasController.index.value == null)
+                      ? SizedBox()
+                      : (bookViewController.classBook == null ||
+                              bookViewController.currentSubjectIndex.value ==
+                                  null)
+                          ? Text(
+                              canvasController
+                                  .allBooks!
+                                  .allBooks[canvasController.index.value!]
+                                  .heading,
+                            )
+                          : Text(
+                              canvasController
+                                      .allBooks!
+                                      .allBooks[canvasController.index.value!]
+                                      .heading +
+                                  bookViewController
+                                      .classBook!
+                                      .subjects[bookViewController
+                                          .currentSubjectIndex.value!]
+                                      .subject,
+                            ),
+                  leading: GestureDetector(
+                    child: const Icon(Icons.menu),
+                    onTap: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                  ),
+                );
+              }),
               Expanded(
                 child: Obx(() {
                   return Padding(
@@ -201,7 +225,6 @@ class BookView extends StatelessWidget {
                               if (!snapshot.data!.exists) {
                                 return const ErrorLogout();
                               }
-                              print(snapshot.data!.data());
                               ClassBook classBook =
                                   ClassBook.fromMap(snapshot.data!.data()!);
                               if (classBook.subjects.isNotEmpty) {
@@ -212,14 +235,6 @@ class BookView extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    canvasController
-                                        .allBooks!
-                                        .allBooks[canvasController.index.value!]
-                                        .heading,
-                                    style: Get.textTheme.headlineLarge,
-                                  ),
-                                  const Divider(),
                                   SizedBox(
                                     height: 160,
                                     child: Row(
@@ -453,5 +468,6 @@ class SelctedBookCover extends StatelessWidget {
 }
 
 class BookViewController {
+  ClassBook? classBook;
   Rx<int?> currentSubjectIndex = Rx<int?>(null);
 }

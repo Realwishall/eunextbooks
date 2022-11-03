@@ -92,10 +92,10 @@ class SideBar extends StatelessWidget {
             ...canvasController.allBooks!.allBooks
                 .mapIndexed((index, e) => Obx(() {
                       return BookRow(
-                        canvascontroller: canvasController,
+                        canvasController: canvasController,
                         e: e,
                         index: index,
-                        isSelcted: index == canvasController.index.value,
+                        isSelected: index == canvasController.index.value,
                       );
                     }))
                 .toList(),
@@ -104,8 +104,8 @@ class SideBar extends StatelessWidget {
                 onPressed: () {
                   FirebaseAuth.instance.signOut();
                 },
-                child: Text("Logout")),
-            SizedBox(
+                child: const Text("Logout")),
+            const SizedBox(
               height: 40,
             ),
           ],
@@ -118,21 +118,21 @@ class SideBar extends StatelessWidget {
 class BookRow extends StatelessWidget {
   const BookRow(
       {Key? key,
-      this.isSelcted = false,
+      this.isSelected = false,
       required this.e,
       required this.index,
-      required this.canvascontroller})
+      required this.canvasController})
       : super(key: key);
-  final bool isSelcted;
+  final bool isSelected;
   final AllBook e;
   final int index;
-  final CanvasController canvascontroller;
+  final CanvasController canvasController;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Scaffold.of(context).closeDrawer();
-        canvascontroller.index.value = index;
+        canvasController.index.value = index;
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 1200),
@@ -140,7 +140,7 @@ class BookRow extends StatelessWidget {
             borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(6.0),
                 bottomLeft: Radius.circular(6.0)),
-            gradient: isSelcted
+            gradient: isSelected
                 ? const LinearGradient(
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -161,7 +161,7 @@ class BookRow extends StatelessWidget {
                     const SizedBox(
                       width: 12,
                     ),
-                    isSelcted
+                    isSelected
                         ? Container(
                             width: 20,
                             height: 20,
@@ -191,13 +191,13 @@ class BookRow extends StatelessWidget {
                       e.heading,
                       style: TextStyle(
                           fontSize: 12,
-                          fontWeight: isSelcted ? FontWeight.bold : null),
+                          fontWeight: isSelected ? FontWeight.bold : null),
                     )
                   ],
                 ),
               ),
             ),
-            if (isSelcted)
+            if (isSelected)
               Container(
                 color: Colors.red,
                 width: 2,

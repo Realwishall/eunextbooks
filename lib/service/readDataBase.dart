@@ -13,4 +13,14 @@ class FireReadApi {
       String classID) {
     return FirestoreEntry.getStream(DataBaseString.classBook, classID);
   }
+
+  static Stream<DocumentSnapshot<Map<String, dynamic>>?> getBookChapter(
+    String classID,
+    String subjectID,
+  ) {
+    ///eunextbook/Database/classBook/Class 1/subject/Class1Science
+    return FirestoreEntry.getStream(
+        "${DataBaseString.classBook}/$classID/${DataBaseString.subject}/",
+        subjectID);
+  }
 }

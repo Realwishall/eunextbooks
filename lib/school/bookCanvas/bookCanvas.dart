@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
+import 'package:eunextbook/model/subjectBook.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -134,12 +136,61 @@ class BookView extends StatelessWidget {
                             ),
                             if (bookViewController.currentSubjectIndex.value !=
                                 null)
-                              DataTable(columns: [
-                                const DataColumn(label: Text("Index")),
-                                const DataColumn(label: Text("Chapter")),
-                                const DataColumn(
-                                    label: Text("Exam Paper Maker")),
-                              ], rows: [])
+                              Expanded(
+                                child: SingleChildScrollView(
+                                  child: StreamBuilder<
+                                          DocumentSnapshot<
+                                              Map<String, dynamic>>?>(
+                                      stream: FireReadApi.getBookChapter(
+                                          canvasController
+                                              .allBooks!
+                                              .allBooks[
+                                                  canvasController.index.value!]
+                                              .id,
+                                          classBook
+                                              .subjects[bookViewController
+                                                  .currentSubjectIndex.value!]
+                                              .id),
+                                      builder: (context, snapshot) {
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                              child:
+                                                  const CircularProgressIndicator());
+                                        }
+                                        if (!snapshot.data!.exists) {
+                                          return const ErrorLogout();
+                                        }
+                                        SubjectBook subBook =
+                                            SubjectBook.fromMap(
+                                                snapshot.data!.data()!);
+                                        return DataTable(
+                                            columns: const [
+                                              DataColumn(label: Text("Index")),
+                                              DataColumn(
+                                                  label: Text("Chapter")),
+                                              DataColumn(
+                                                  label:
+                                                      Text("Exam Paper Maker")),
+                                            ],
+                                            rows: subBook.chapters
+                                                .mapIndexed((index, e) =>
+                                                    DataRow(cells: [
+                                                      DataCell(Text((index + 1)
+                                                          .toString())),
+                                                      DataCell(Text(e.name)),
+                                                      DataCell(e
+                                                              .testPaperGenrater
+                                                              .isNotEmpty
+                                                          ? TextButton(
+                                                              onPressed: () {},
+                                                              child: Text(
+                                                                  "Download"))
+                                                          : Text("")),
+                                                    ]))
+                                                .toList());
+                                      }),
+                                ),
+                              )
                           ],
                         );
                       }),

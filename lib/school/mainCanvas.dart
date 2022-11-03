@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -90,7 +91,16 @@ class SideBar extends StatelessWidget {
                         isSelcted: index == canvasController.index.value,
                       );
                     }))
-                .toList()
+                .toList(),
+            Spacer(),
+            TextButton(
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                },
+                child: Text("Logout")),
+            SizedBox(
+              height: 40,
+            ),
           ],
         ),
       ),

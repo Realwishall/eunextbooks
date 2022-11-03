@@ -9,16 +9,20 @@ class ErrorLogout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              FirebaseAuth.instance.signOut();
-            },
-            child: const Center(
-                child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text("Some error occurred..."),
-            ))),
+      child: SizedBox(
+        width: 600,
+        height: 400,
+        child: Center(
+          child: ElevatedButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+              },
+              child: const Center(
+                  child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text("Some error occurred..."),
+              ))),
+        ),
       ),
     );
   }

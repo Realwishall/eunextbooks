@@ -64,21 +64,16 @@ AllBooks adminLoadAllBooks = AllBooks(allBooks: [
 ]);
 
 ClassBook Class1 = ClassBook(subjects: [
-  Subject(coverPage: "coverPage", subject: "Science Era", id: "Class1Science"),
   Subject(
-      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2Fscience%20era-min.jpg?alt=media&token=623ccf8e-dbc7-4dae-82a7-a2b500ae0b17",
+      subject: "Science Era",
+      id: "Class1Science"),
   Subject(
-      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
-  Subject(
-      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
-  Subject(
-      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
-  Subject(
-      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
-  Subject(
-      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
-  Subject(
-      coverPage: "coverPage", subject: "Brain Train", id: "Class1BrainTrain"),
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2Fbrain%20train%201-min.jpg?alt=media&token=d0786296-6b0d-46da-84a8-c030cdaa14ea",
+      subject: "Brain Train",
+      id: "Class1BrainTrain"),
 ]);
 
 SubjectBook Class1Science = SubjectBook(chapters: [

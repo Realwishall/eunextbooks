@@ -2,11 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:eunextbook/model/subjectBook.dart';
 import 'package:eunextbook/myLayout.dart';
+import 'package:eunextbook/service/download.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../model/classBook.dart';
-import '../../service/databaseString.dart';
 import '../../service/readDataBase.dart';
 import '../../waiting/waiting.dart';
 import '../../widget/errorLogout.dart';
@@ -70,7 +70,7 @@ class BookView extends StatelessWidget {
                               height: 160,
                               child: Row(
                                 children: [
-                                  SelctedBookCover(
+                                  SelectedBookCover(
                                       bookViewController: bookViewController),
                                   Expanded(
                                     child: ListView.builder(
@@ -107,10 +107,9 @@ class BookView extends StatelessWidget {
                                                                 ..setEntry(
                                                                     3, 2, 0.01),
                                                           child: Align(
-                                                            child: Image.asset(
-                                                                bookCoverList[index %
-                                                                    bookCoverList
-                                                                        .length]),
+                                                            child: Image
+                                                                .network(sub
+                                                                    .coverPage),
                                                           ),
                                                         ),
                                                       ],
@@ -239,7 +238,7 @@ class BookView extends StatelessWidget {
                                     height: 160,
                                     child: Row(
                                       children: [
-                                        SelctedBookCover(
+                                        SelectedBookCover(
                                             bookViewController:
                                                 bookViewController),
                                         Expanded(
@@ -279,10 +278,9 @@ class BookView extends StatelessWidget {
                                                                   ..setEntry(3,
                                                                       2, 0.01),
                                                                 child: Align(
-                                                                  child: Image.asset(
-                                                                      bookCoverList[
-                                                                          index %
-                                                                              bookCoverList.length]),
+                                                                  child: Image
+                                                                      .network(sub
+                                                                          .coverPage),
                                                                 ),
                                                               ),
                                                             ],
@@ -384,7 +382,7 @@ class ShowChapterList extends StatelessWidget {
                         columns: const [
                           DataColumn(label: Text("Index")),
                           DataColumn(label: Text("Chapter")),
-                          DataColumn(label: Text("Exam Paper Maker")),
+                          DataColumn(label: Text("Test Generator")),
                         ],
                         rows: subBook.chapters
                             .mapIndexed((index, e) => DataRow(cells: [
@@ -392,7 +390,9 @@ class ShowChapterList extends StatelessWidget {
                                   DataCell(Text(e.name)),
                                   DataCell(e.testPaperGenrater.isNotEmpty
                                       ? TextButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Download.down(e.testPaperGenrater);
+                                          },
                                           child: const Text("Download"))
                                       : const Text("")),
                                 ]))
@@ -420,7 +420,7 @@ class ShowChapterList extends StatelessWidget {
                     return DataTable(
                         columns: const [
                           DataColumn(label: Text("Chapter")),
-                          DataColumn(label: Text("Exam Paper Maker")),
+                          DataColumn(label: Text("Test Generator")),
                         ],
                         rows: subBook.chapters
                             .mapIndexed((index, e) => DataRow(cells: [
@@ -428,7 +428,7 @@ class ShowChapterList extends StatelessWidget {
                                   DataCell(e.testPaperGenrater.isNotEmpty
                                       ? TextButton(
                                           onPressed: () {
-                                            //launchUrl(url);
+                                            Download.down(e.testPaperGenrater);
                                           },
                                           child: const Text("Download"))
                                       : const Text("")),
@@ -441,8 +441,8 @@ class ShowChapterList extends StatelessWidget {
   }
 }
 
-class SelctedBookCover extends StatelessWidget {
-  const SelctedBookCover({
+class SelectedBookCover extends StatelessWidget {
+  const SelectedBookCover({
     Key? key,
     required this.bookViewController,
   }) : super(key: key);
@@ -459,11 +459,14 @@ class SelctedBookCover extends StatelessWidget {
       duration: const Duration(seconds: 10),
       child: Obx(() {
         return SizedBox(
-          width: 100,
-          child: Image.asset(bookCoverList[
-              bookViewController.currentSubjectIndex.value! %
-                  bookCoverList.length]),
-        );
+            width: 100,
+            child: (bookViewController.currentSubjectIndex.value == null ||
+                    bookViewController.classBook == null)
+                ? SizedBox()
+                : Image.network(bookViewController
+                    .classBook!
+                    .subjects[bookViewController.currentSubjectIndex.value!]
+                    .coverPage));
       }),
     );
   }

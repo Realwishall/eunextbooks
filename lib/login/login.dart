@@ -36,13 +36,7 @@ class LoginPage extends StatelessWidget {
                   'Login here to get access Books',
                 )),
             Spacer(
-              flex: 1,
-            ),
-            Spacer(
-              flex: 1,
-            ),
-            Spacer(
-              flex: 1,
+              flex: 2,
             ),
             const Text(
               'EuNext Email ID',
@@ -88,22 +82,7 @@ class LoginPage extends StatelessWidget {
               );
             }),
             Spacer(
-              flex: 1,
-            ),
-            Spacer(
-              flex: 1,
-            ),
-            Spacer(
-              flex: 1,
-            ),
-            Spacer(
-              flex: 1,
-            ),
-            Spacer(
-              flex: 1,
-            ),
-            Spacer(
-              flex: 1,
+              flex: 6,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18.0),
@@ -115,16 +94,7 @@ class LoginPage extends StatelessWidget {
                   )),
             ),
             Spacer(
-              flex: 1,
-            ),
-            Spacer(
-              flex: 1,
-            ),
-            Spacer(
-              flex: 1,
-            ),
-            Spacer(
-              flex: 1,
+              flex: 4,
             ),
             const Center(
               child: Text('-OR-'),

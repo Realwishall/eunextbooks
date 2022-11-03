@@ -1,3 +1,4 @@
+import 'package:eunextbook/myLayout.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,11 +11,11 @@ class LoginPage extends StatelessWidget {
     LoginPageController loginPageController = LoginPageController();
     return Container(
       width: 400,
-      height: 500,
+      height: 550,
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(12.0)),
       child: Padding(
-        padding: const EdgeInsets.only(left: 60, top: 25, right: 60),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -141,17 +142,23 @@ class LoginPageNEw extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("asset/pageee.png"),
-            fit: BoxFit.cover,
+    return MyLayout(
+      mainLayout: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/pageee.png"),
+              fit: BoxFit.cover,
+            ),
           ),
+          alignment: Alignment.center,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 52, top: 18, right: 52),
+            child: LoginPage(),
+          ) /* add child content here */,
         ),
-        alignment: Alignment.center,
-        child: LoginPage() /* add child content here */,
       ),
+      smallLayout: Scaffold(body: Center(child: LoginPage())),
     );
   }
 }

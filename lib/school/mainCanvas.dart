@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
+import 'package:eunextbook/myLayout.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,32 +19,38 @@ class MyCanvas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>?>(
-            stream: FireReadApi.getAllBook(),
-            builder: (context, snapshot) {
-              if (!snapshot.hasData) {
-                return const Waiting();
-              }
-              if (!snapshot.data!.exists) {
-                return const ErrorLogout();
-              }
-              AllBooks allBooks = AllBooks.fromMap(snapshot.data!.data()!);
-              canvasController.allBooks = allBooks;
+    return StreamBuilder<DocumentSnapshot<Map<String, dynamic>>?>(
+        stream: FireReadApi.getAllBook(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Waiting();
+          }
+          if (!snapshot.data!.exists) {
+            return const ErrorLogout();
+          }
+          AllBooks allBooks = AllBooks.fromMap(snapshot.data!.data()!);
+          canvasController.allBooks = allBooks;
 
-              if (allBooks.allBooks.isNotEmpty) {
-                canvasController.index = 0.obs;
-              }
-              return Row(
+          if (allBooks.allBooks.isNotEmpty) {
+            canvasController.index = 0.obs;
+          }
+          return MyLayout(
+            mainLayout: Scaffold(
+              body: Row(
                 children: [
                   SideBar(canvasController: canvasController),
-                  BookView(canvasController: canvasController),
+                  Expanded(child: BookView(canvasController: canvasController)),
                 ],
-              );
-            }),
-      ),
-    );
+              ),
+            ),
+            smallLayout: Scaffold(
+              drawer: Container(
+                  color: Colors.white,
+                  child: SideBar(canvasController: canvasController)),
+              body: BookView(canvasController: canvasController),
+            ),
+          );
+        });
   }
 }
 
@@ -124,6 +131,7 @@ class BookRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        Scaffold.of(context).closeDrawer();
         canvascontroller.index.value = index;
       },
       child: AnimatedContainer(

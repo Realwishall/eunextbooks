@@ -50,7 +50,7 @@ class AuthWrapper extends StatelessWidget {
         case AuthState.waiting:
           return const Waiting();
         case AuthState.needTologin:
-          return const LoginPage();
+          return const LoginPageNEw();
         case AuthState.login:
           if (FirebaseAuth.instance.currentUser!.email!.split("@").last ==
               "admin") {

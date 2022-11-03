@@ -66,34 +66,51 @@ class BookView extends StatelessWidget {
                             ),
                             const Divider(),
                             SizedBox(
-                              height: 120,
+                              height: 160,
                               child: ListView.builder(
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, index) {
                                   Subject sub = classBook.subjects[index];
-                                  return GestureDetector(
-                                    onTap: () {
-                                      bookViewController
-                                          .currentSubjectIndex.value = index;
-                                    },
-                                    child: Padding(
-                                      padding: index == 0
-                                          ? const EdgeInsets.fromLTRB(
-                                              0, 8, 8, 8)
-                                          : const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        children: [
-                                          Container(
-                                            width: 80,
-                                            height: 80,
-                                            child: Image.asset(bookCoverList[
-                                                index % bookCoverList.length]),
-                                          ),
-                                          Text(sub.subject)
-                                        ],
+                                  return Obx(() {
+                                    return GestureDetector(
+                                      onTap: () {
+                                        bookViewController
+                                            .currentSubjectIndex.value = index;
+                                      },
+                                      child: Padding(
+                                        padding: index == 0
+                                            ? const EdgeInsets.fromLTRB(
+                                                0, 8, 8, 8)
+                                            : const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 120,
+                                              width: 120,
+                                              child: Stack(
+                                                children: [
+                                                  Transform(
+                                                    transform: isSelctededIndex(
+                                                            index)
+                                                        ? Matrix4.identity()
+                                                        : Matrix4.identity()
+                                                      ..setEntry(3, 2, 0.01),
+                                                    child: Align(
+                                                      child: Image.asset(
+                                                          bookCoverList[index %
+                                                              bookCoverList
+                                                                  .length]),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Text(sub.subject)
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  );
+                                    );
+                                  });
                                 },
                                 itemCount: classBook.subjects.length,
                               ),
@@ -131,6 +148,10 @@ class BookView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  bool isSelctededIndex(int index) {
+    return bookViewController.currentSubjectIndex.value == index;
   }
 }
 

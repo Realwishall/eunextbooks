@@ -109,7 +109,7 @@ SubjectBook Class1Science = SubjectBook(chapters: [
   Chapter(testPaperGenrater: "", name: "Air and Water"),
   Chapter(testPaperGenrater: "", name: "Weather and Season"),
   Chapter(testPaperGenrater: "", name: "The Sun, Earth and Moon"),
-], teacherHandBook: "teacherHandBook");
+], teacherHandBook: "");
 
 SubjectBook Class1BrainTrain = SubjectBook(chapters: [
   Chapter(testPaperGenrater: "", name: "Arresting Attires"),
@@ -152,7 +152,7 @@ SubjectBook Class1BrainTrain = SubjectBook(chapters: [
   Chapter(testPaperGenrater: "", name: "Things beyond Thinking"),
   Chapter(testPaperGenrater: "", name: "Our Body"),
   Chapter(testPaperGenrater: "", name: "Helping Hands"),
-], teacherHandBook: "teacherHandBook");
+], teacherHandBook: "");
 
 SubjectBook Class1EVS = SubjectBook(teacherHandBook: "", chapters: [
   Chapter(
@@ -232,4 +232,4 @@ SubjectBook Class1Maths = SubjectBook(chapters: [
   Chapter(testPaperGenrater: "", name: "Time and Calendar"),
   Chapter(testPaperGenrater: "", name: "Shapes and Patterns"),
   Chapter(testPaperGenrater: "", name: "Data Handling"),
-], teacherHandBook: "teacherHandBook");
+], teacherHandBook: "");

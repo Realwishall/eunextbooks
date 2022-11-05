@@ -129,23 +129,6 @@ class BookView extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            Row(
-                              children: [
-                                if (bookViewController
-                                        .currentSubjectIndex.value !=
-                                    null)
-                                  TextButton(
-                                      onPressed: () {},
-                                      child: const Text("Download Ebook")),
-                                if (bookViewController
-                                        .currentSubjectIndex.value !=
-                                    null)
-                                  TextButton(
-                                      onPressed: () {},
-                                      child: const Text(
-                                          "Download Teacher Handbook")),
-                              ],
-                            ),
                             if (bookViewController.currentSubjectIndex.value !=
                                 null)
                               ShowChapterList(
@@ -302,24 +285,6 @@ class BookView extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                  Row(
-                                    children: [
-                                      if (bookViewController
-                                              .currentSubjectIndex.value !=
-                                          null)
-                                        TextButton(
-                                            onPressed: () {},
-                                            child:
-                                                const Text("Download Ebook")),
-                                      if (bookViewController
-                                              .currentSubjectIndex.value !=
-                                          null)
-                                        TextButton(
-                                            onPressed: () {},
-                                            child: const Text(
-                                                "Download Teacher Handbook")),
-                                    ],
-                                  ),
                                   if (bookViewController
                                           .currentSubjectIndex.value !=
                                       null)
@@ -361,84 +326,113 @@ class ShowChapterList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Obx(() {
-        return MyLayout(
-            mainLayout: SingleChildScrollView(
-              child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>?>(
-                  stream: FireReadApi.getBookChapter(
-                      canvasController
-                          .allBooks!.allBooks[canvasController.index.value!].id,
-                      classBook
-                          .subjects[
-                              bookViewController.currentSubjectIndex.value!]
-                          .id),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                    if (!snapshot.data!.exists) {
-                      return const ErrorLogout();
-                    }
-                    SubjectBook subBook =
-                        SubjectBook.fromMap(snapshot.data!.data()!);
-                    return DataTable(
-                        columns: const [
-                          DataColumn(label: Text("Index")),
-                          DataColumn(label: Text("Chapter")),
-                          DataColumn(label: Text("Test Generator")),
-                        ],
-                        rows: subBook.chapters
-                            .mapIndexed((index, e) => DataRow(cells: [
-                                  DataCell(Text((index + 1).toString())),
-                                  DataCell(Text(e.name)),
-                                  DataCell(e.testPaperGenrater.isNotEmpty
-                                      ? TextButton(
-                                          onPressed: () {
-                                            Download.down(e.testPaperGenrater);
-                                          },
-                                          child: const Text("Download"))
-                                      : const Text("")),
-                                ]))
-                            .toList());
-                  }),
-            ),
-            smallLayout: SingleChildScrollView(
-              child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>?>(
-                  stream: FireReadApi.getBookChapter(
-                      canvasController
-                          .allBooks!.allBooks[canvasController.index.value!].id,
-                      classBook
-                          .subjects[
-                              bookViewController.currentSubjectIndex.value!]
-                          .id),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                    if (!snapshot.data!.exists) {
-                      return const ErrorLogout();
-                    }
-                    SubjectBook subBook =
-                        SubjectBook.fromMap(snapshot.data!.data()!);
-                    return DataTable(
-                        columns: const [
-                          DataColumn(label: Text("Chapter")),
-                          DataColumn(label: Text("Test Generator")),
-                        ],
-                        rows: subBook.chapters
-                            .mapIndexed((index, e) => DataRow(cells: [
-                                  DataCell(Text(e.name)),
-                                  DataCell(e.testPaperGenrater.isNotEmpty
-                                      ? TextButton(
-                                          onPressed: () {
-                                            Download.down(e.testPaperGenrater);
-                                          },
-                                          child: const Text("Download"))
-                                      : const Text("")),
-                                ]))
-                            .toList());
-                  }),
-            ));
+        return SingleChildScrollView(
+          child: StreamBuilder<DocumentSnapshot<Map<String, dynamic>>?>(
+              stream: FireReadApi.getBookChapter(
+                  canvasController
+                      .allBooks!.allBooks[canvasController.index.value!].id,
+                  classBook
+                      .subjects[bookViewController.currentSubjectIndex.value!]
+                      .id),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+                if (!snapshot.data!.exists) {
+                  return const ErrorLogout();
+                }
+                SubjectBook subBook =
+                    SubjectBook.fromMap(snapshot.data!.data()!);
+                return MyLayout(
+                  mainLayout: Column(
+                    children: [
+                      DownloadButton(
+                          bookViewController: bookViewController,
+                          subBook: subBook),
+                      DataTable(
+                          columns: const [
+                            DataColumn(label: Text("Index")),
+                            DataColumn(label: Text("Chapter")),
+                            DataColumn(label: Text("Test Generator")),
+                          ],
+                          rows: subBook.chapters
+                              .mapIndexed((index, e) => DataRow(cells: [
+                                    DataCell(Text((index + 1).toString())),
+                                    DataCell(Text(e.name)),
+                                    DataCell(e.testPaperGenrater.isNotEmpty
+                                        ? TextButton(
+                                            onPressed: () {
+                                              Download.down(
+                                                  e.testPaperGenrater);
+                                            },
+                                            child: const Text("Download"))
+                                        : const Text("")),
+                                  ]))
+                              .toList()),
+                    ],
+                  ),
+                  smallLayout: Column(
+                    children: [
+                      DownloadButton(
+                          bookViewController: bookViewController,
+                          subBook: subBook),
+                      DataTable(
+                          columns: const [
+                            DataColumn(label: Text("Chapter")),
+                            DataColumn(label: Text("Test Generator")),
+                          ],
+                          rows: subBook.chapters
+                              .mapIndexed((index, e) => DataRow(cells: [
+                                    DataCell(Text(e.name)),
+                                    DataCell(e.testPaperGenrater.isNotEmpty
+                                        ? TextButton(
+                                            onPressed: () {
+                                              Download.down(
+                                                  e.testPaperGenrater);
+                                            },
+                                            child: const Text("Download"))
+                                        : const Text("")),
+                                  ]))
+                              .toList()),
+                    ],
+                  ),
+                );
+              }),
+        );
       }),
+    );
+  }
+}
+
+class DownloadButton extends StatelessWidget {
+  const DownloadButton({
+    Key? key,
+    required this.bookViewController,
+    required this.subBook,
+  }) : super(key: key);
+
+  final BookViewController bookViewController;
+  final SubjectBook subBook;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        if (bookViewController.currentSubjectIndex.value != null &&
+            subBook.eBook.isNotEmpty)
+          TextButton(
+              onPressed: () {
+                Download.down(subBook.eBook);
+              },
+              child: const Text("Download Ebook")),
+        if (bookViewController.currentSubjectIndex.value != null &&
+            subBook.eBook.isNotEmpty)
+          TextButton(
+              onPressed: () {
+                Download.down(subBook.teacherHandBook);
+              },
+              child: const Text("Download Teacher Handbook")),
+      ],
     );
   }
 }
@@ -456,15 +450,18 @@ class SelectedBookCover extends StatelessWidget {
     return Obx(() {
       return AnimatedSwitcher(
         duration: const Duration(seconds: 10),
-        child: SizedBox(
-            width: 100,
-            child: (bookViewController.currentSubjectIndex.value == null ||
-                    bookViewController.classBook == null)
-                ? SizedBox()
-                : Image.network(bookViewController
-                    .classBook!
-                    .subjects[bookViewController.currentSubjectIndex.value!]
-                    .coverPage)),
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: SizedBox(
+              width: 100,
+              child: (bookViewController.currentSubjectIndex.value == null ||
+                      bookViewController.classBook == null)
+                  ? SizedBox()
+                  : Image.network(bookViewController
+                      .classBook!
+                      .subjects[bookViewController.currentSubjectIndex.value!]
+                      .coverPage)),
+        ),
       );
     });
   }

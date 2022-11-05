@@ -9,20 +9,24 @@ class SubjectBook {
   SubjectBook({
     required this.chapters,
     required this.teacherHandBook,
+    this.eBook = "",
   });
 
   List<Chapter> chapters;
   String teacherHandBook;
+  String eBook;
 
   factory SubjectBook.fromMap(Map<String, dynamic> json) => SubjectBook(
         chapters:
             List<Chapter>.from(json["Chapters"].map((x) => Chapter.fromMap(x))),
         teacherHandBook: json["teacherHandBook"],
+        eBook: json["eBook"] ?? "",
       );
 
   Map<String, dynamic> toMap() => {
         "Chapters": List<dynamic>.from(chapters.map((x) => x.toMap())),
         "teacherHandBook": teacherHandBook,
+        "eBook": eBook,
       };
 }
 

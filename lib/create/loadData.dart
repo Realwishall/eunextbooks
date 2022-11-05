@@ -28,6 +28,18 @@ class Loading {
             "${DataBaseString.classBook}/${DataBaseString.class1}/${DataBaseString.subject}")
         .doc("Class1BrainTrain")
         .set(Class1BrainTrain.toMap());
+
+    await FirebaseFirestore.instance
+        .collection(
+            "${DataBaseString.classBook}/${DataBaseString.class1}/${DataBaseString.subject}")
+        .doc("Class1EVS")
+        .set(Class1EVS.toMap());
+
+    await FirebaseFirestore.instance
+        .collection(
+            "${DataBaseString.classBook}/${DataBaseString.class1}/${DataBaseString.subject}")
+        .doc("Class1Maths")
+        .set(Class1Maths.toMap());
     //
     // await FirebaseFirestore.instance
     //     .collection(DataBaseString.classBook)
@@ -74,6 +86,16 @@ ClassBook Class1 = ClassBook(subjects: [
           "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2Fbrain%20train%201-min.jpg?alt=media&token=d0786296-6b0d-46da-84a8-c030cdaa14ea",
       subject: "Brain Train",
       id: "Class1BrainTrain"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2FEvs%201-min.jpg?alt=media&token=1a2daacf-545e-4383-8294-1e390e4c1c96",
+      subject: "EVS",
+      id: "Class1EVS"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2Fmath%20master%20class%201-min.jpg?alt=media&token=f014cd62-fd22-4d99-9345-3b7d18b7d7d4",
+      subject: "Maths",
+      id: "Class1Maths"),
 ]);
 
 SubjectBook Class1Science = SubjectBook(chapters: [
@@ -132,47 +154,82 @@ SubjectBook Class1BrainTrain = SubjectBook(chapters: [
   Chapter(testPaperGenrater: "", name: "Helping Hands"),
 ], teacherHandBook: "teacherHandBook");
 
-ClassBook Class2 = ClassBook(subjects: [
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
+SubjectBook Class1EVS = SubjectBook(teacherHandBook: "", chapters: [
+  Chapter(
+    testPaperGenrater: "",
+    name: "About Myself",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "My Family",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "People Who Help Us",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "Plants Around Us",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "Animals Around Us",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "Animals, Our Friends",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "Living And Non Living Things",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "My School",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "Occasions We Celebrate",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "Housing And Clothing",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "Land Transport",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "Air And Water Transport",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "Weather And Seasons",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "Our India",
+  ),
+  Chapter(
+    testPaperGenrater: "",
+    name: "The Sun, Earth And Moon",
+  ),
 ]);
 
-ClassBook Class3 = ClassBook(subjects: [
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-]);
-
-ClassBook Class4 = ClassBook(subjects: [
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-]);
-
-ClassBook Class5 = ClassBook(subjects: [
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-]);
-
-ClassBook Class6 = ClassBook(subjects: [
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-  Subject(coverPage: "coverPage", subject: "subject", id: "id"),
-]);
+SubjectBook Class1Maths = SubjectBook(chapters: [
+  Chapter(testPaperGenrater: "", name: "Pre-Learning Concept"),
+  Chapter(testPaperGenrater: "", name: "Numbers (0 to 20)"),
+  Chapter(testPaperGenrater: "", name: "Addition and Subtraction within 20"),
+  Chapter(testPaperGenrater: "", name: "Numbers (20 to 50)"),
+  Chapter(testPaperGenrater: "", name: "Numbers (51 to 100)"),
+  Chapter(
+      testPaperGenrater: "",
+      name: "Addition and Subtraction of 2- Digit Number"),
+  Chapter(testPaperGenrater: "", name: "Multiplication"),
+  Chapter(testPaperGenrater: "", name: "Money"),
+  Chapter(testPaperGenrater: "", name: "Measurement"),
+  Chapter(testPaperGenrater: "", name: "Time and Calendar"),
+  Chapter(testPaperGenrater: "", name: "Shapes and Patterns"),
+  Chapter(testPaperGenrater: "", name: "Data Handling"),
+], teacherHandBook: "teacherHandBook");

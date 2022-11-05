@@ -51,6 +51,7 @@ class BookView extends StatelessWidget {
                         print(snapshot.data!.data());
                         ClassBook classBook =
                             ClassBook.fromMap(snapshot.data!.data()!);
+                        bookViewController.classBook = classBook;
                         if (classBook.subjects.isNotEmpty) {
                           bookViewController.currentSubjectIndex.value = 0;
                         }
@@ -226,6 +227,7 @@ class BookView extends StatelessWidget {
                               }
                               ClassBook classBook =
                                   ClassBook.fromMap(snapshot.data!.data()!);
+                              bookViewController.classBook = classBook;
                               if (classBook.subjects.isNotEmpty) {
                                 bookViewController.currentSubjectIndex.value =
                                     0;
@@ -451,14 +453,10 @@ class SelectedBookCover extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedSwitcher(
-      transitionBuilder: (currentChild, animation) {
-        print(animation);
-        return ScaleTransition(scale: animation, child: currentChild);
-      },
-      duration: const Duration(seconds: 10),
-      child: Obx(() {
-        return SizedBox(
+    return Obx(() {
+      return AnimatedSwitcher(
+        duration: const Duration(seconds: 10),
+        child: SizedBox(
             width: 100,
             child: (bookViewController.currentSubjectIndex.value == null ||
                     bookViewController.classBook == null)
@@ -466,9 +464,9 @@ class SelectedBookCover extends StatelessWidget {
                 : Image.network(bookViewController
                     .classBook!
                     .subjects[bookViewController.currentSubjectIndex.value!]
-                    .coverPage));
-      }),
-    );
+                    .coverPage)),
+      );
+    });
   }
 }
 

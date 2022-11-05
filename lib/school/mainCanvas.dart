@@ -39,7 +39,9 @@ class MyCanvas extends StatelessWidget {
               body: Row(
                 children: [
                   SideBar(canvasController: canvasController),
-                  Expanded(child: BookView(canvasController: canvasController)),
+                  Expanded(
+                      child:
+                          AllBookInClass(canvasController: canvasController)),
                 ],
               ),
             ),
@@ -47,7 +49,7 @@ class MyCanvas extends StatelessWidget {
               drawer: Container(
                   color: Colors.white,
                   child: SideBar(canvasController: canvasController)),
-              body: BookView(canvasController: canvasController),
+              body: AllBookInClass(canvasController: canvasController),
             ),
           );
         });

@@ -40,6 +40,18 @@ class Loading {
             "${DataBaseString.classBook}/${DataBaseString.class1}/${DataBaseString.subject}")
         .doc("Class1Maths")
         .set(Class1Maths.toMap());
+
+    await FirebaseFirestore.instance
+        .collection(
+            "${DataBaseString.classBook}/${DataBaseString.class1}/${DataBaseString.subject}")
+        .doc("Class1Hindi")
+        .set(Class1Hindi.toMap());
+
+    await FirebaseFirestore.instance
+        .collection(
+            "${DataBaseString.classBook}/${DataBaseString.class1}/${DataBaseString.subject}")
+        .doc("Class1GrammarJingle")
+        .set(Class1GrammarJingle.toMap());
     //
     // await FirebaseFirestore.instance
     //     .collection(DataBaseString.classBook)
@@ -96,6 +108,16 @@ ClassBook Class1 = ClassBook(subjects: [
           "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2Fmath%20master%20class%201-min.jpg?alt=media&token=f014cd62-fd22-4d99-9345-3b7d18b7d7d4",
       subject: "Maths",
       id: "Class1Maths"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2Fhindi%201-min.jpg?alt=media&token=1ad21f4d-d968-464c-ac26-ec06ca723b19",
+      subject: "Hindi",
+      id: "Class1Hindi"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2Fgrammar%20giggle%201-min.jpg?alt=media&token=10b4959e-cc1a-4cd0-9b85-14cd9bcfea6f",
+      subject: "Grammar Jingle",
+      id: "Class1GrammarJingle"),
 ]);
 
 SubjectBook Class1Science = SubjectBook(chapters: [
@@ -232,4 +254,72 @@ SubjectBook Class1Maths = SubjectBook(chapters: [
   Chapter(testPaperGenrater: "", name: "Time and Calendar"),
   Chapter(testPaperGenrater: "", name: "Shapes and Patterns"),
   Chapter(testPaperGenrater: "", name: "Data Handling"),
+], teacherHandBook: "");
+
+SubjectBook Class1Hindi = SubjectBook(chapters: [
+  Chapter(testPaperGenrater: "", name: "वर्ण-परिवार (Alphabet)"),
+  Chapter(testPaperGenrater: "", name: "मात्राएँ (Signs Of Symbols)"),
+  Chapter(testPaperGenrater: "", name: "दो वर्णों  से बने शब्द  "),
+  Chapter(testPaperGenrater: "", name: "तीन व चार वर्णों से बने शब्द  "),
+  Chapter(testPaperGenrater: "", name: "बिन्दु और चन्द्रबिन्दु वाले शब्द  "),
+  Chapter(testPaperGenrater: "", name: "अः एवं ऋ की मात्रा वाले शब्द  "),
+  Chapter(testPaperGenrater: "", name: "मात्रा वाले शब्द  "),
+  Chapter(testPaperGenrater: "", name: "वाक्य (Sentence)"),
+  Chapter(testPaperGenrater: "", name: "नाम वाले शब्द (Naming Words/Noun)"),
+  Chapter(testPaperGenrater: "", name: "लिंग (Gender)"),
+  Chapter(testPaperGenrater: "", name: "उलटे अर्थ वाले शब्द (Antonyms)"),
+  Chapter(testPaperGenrater: "", name: "समान अर्थ वाले शब्द (Synonyms)"),
+  Chapter(testPaperGenrater: "", name: "नाम की जगह (In Place Of Nouns)"),
+  Chapter(
+      testPaperGenrater: "",
+      name: "विशेषता बताने वाले शब्द (Describing Words)"),
+  Chapter(testPaperGenrater: "", name: "काम बताने वाले शब्द (Verbs)"),
+  Chapter(testPaperGenrater: "", name: "एक या अनेक (One or Many)"),
+  Chapter(testPaperGenrater: "", name: "दिन और महीने (Days and Months) "),
+  Chapter(testPaperGenrater: "", name: "कविता एवं कहानी (Poems and Story) "),
+  Chapter(testPaperGenrater: "", name: "शब्द-अर्थ (Word Meaning) "),
+  Chapter(testPaperGenrater: "", name: "क्रियाकलाप (Activity) "),
+], teacherHandBook: "");
+
+SubjectBook Class1GrammarJingle = SubjectBook(chapters: [
+  Chapter(testPaperGenrater: "", name: "Vowels and Consonants"),
+  Chapter(testPaperGenrater: "", name: "Articles"),
+  Chapter(testPaperGenrater: "", name: "Naming Words"),
+  Chapter(testPaperGenrater: "", name: "Singular and Plural"),
+  Chapter(testPaperGenrater: "", name: "Gender"),
+  Chapter(testPaperGenrater: "", name: "Common Names and Special Names"),
+  Chapter(testPaperGenrater: "", name: "Pronouns"),
+  Chapter(testPaperGenrater: "", name: "Action Words"),
+  Chapter(testPaperGenrater: "", name: "Describing Words"),
+  Chapter(testPaperGenrater: "", name: "Position Words"),
+  Chapter(testPaperGenrater: "", name: "Joining Words"),
+  Chapter(testPaperGenrater: "", name: "Opposites and Similar Words"),
+  Chapter(testPaperGenrater: "", name: "Sentences"),
+  Chapter(testPaperGenrater: "", name: "Tenses"),
+  Chapter(testPaperGenrater: "", name: "Punctuations"),
+  Chapter(testPaperGenrater: "", name: "Comprehension"),
+  Chapter(testPaperGenrater: "", name: "Vocabulary"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+], teacherHandBook: "");
+
+SubjectBook Class1SocialSafari = SubjectBook(chapters: [
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
+  Chapter(testPaperGenrater: "", name: "Composition"),
 ], teacherHandBook: "");

@@ -148,7 +148,7 @@ class LoginPageNEw extends StatelessWidget {
     return MyLayout(
       mainLayout: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage("asset/pageee.png"),
               fit: BoxFit.cover,

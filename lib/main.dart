@@ -13,7 +13,7 @@ import 'waiting/waiting.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //Loading().upload();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -52,7 +52,7 @@ class AuthWrapper extends StatelessWidget {
           return const LoginPageNEw();
         case AuthState.login:
           if (FirebaseAuth.instance.currentUser!.email!.split("@").last ==
-              "admin") {
+              "admin.com") {
             return const AdminPage();
           } else {
             return MyCanvas();

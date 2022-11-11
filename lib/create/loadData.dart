@@ -112,17 +112,17 @@ ClassBook Class1 = ClassBook(subjects: [
   Subject(
       coverPage:
           "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2Fmath%20master%20class%201-min.jpg?alt=media&token=f014cd62-fd22-4d99-9345-3b7d18b7d7d4",
-      subject: "Maths",
+      subject: "Maths Master",
       id: "Class1Maths"),
   Subject(
       coverPage:
           "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2Fhindi%201-min.jpg?alt=media&token=1ad21f4d-d968-464c-ac26-ec06ca723b19",
-      subject: "Hindi",
+      subject: "Hindi Prabhat",
       id: "Class1Hindi"),
   Subject(
       coverPage:
           "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FClass%201%2Fgrammar%20giggle%201-min.jpg?alt=media&token=10b4959e-cc1a-4cd0-9b85-14cd9bcfea6f",
-      subject: "Grammar Jingle",
+      subject: "Grammar Giggle",
       id: "Class1GrammarJingle"),
 
   Subject(

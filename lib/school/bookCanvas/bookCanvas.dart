@@ -466,17 +466,20 @@ class SelectedBookCover extends StatelessWidget {
     return Obx(() {
       return AnimatedSwitcher(
         duration: const Duration(seconds: 10),
-        child: Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: SizedBox(
-              width: 100,
-              child: (bookViewController.currentSubjectIndex.value == null ||
-                      bookViewController.classBook == null)
-                  ? SizedBox()
-                  : Image.network(bookViewController
-                      .classBook!
-                      .subjects[bookViewController.currentSubjectIndex.value!]
-                      .coverPage)),
+        child: Container(
+          color: Colors.black,
+          child: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: SizedBox(
+                width: 100,
+                child: (bookViewController.currentSubjectIndex.value == null ||
+                        bookViewController.classBook == null)
+                    ? SizedBox()
+                    : Image.network(bookViewController
+                        .classBook!
+                        .subjects[bookViewController.currentSubjectIndex.value!]
+                        .coverPage)),
+          ),
         ),
       );
     });

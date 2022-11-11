@@ -55,6 +55,8 @@ class AllBookInClass extends StatelessWidget {
                           bookViewController.currentSubjectIndex.value = 0;
                         }
                         return Obx(() {
+                          ScrollController scrollController =
+                              ScrollController();
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -77,57 +79,61 @@ class AllBookInClass extends StatelessWidget {
                                     SelectedBookCover(
                                         bookViewController: bookViewController),
                                     Expanded(
-                                      child: ListView.builder(
-                                        scrollDirection: Axis.horizontal,
-                                        itemBuilder: (context, index) {
-                                          Subject sub =
-                                              classBook.subjects[index];
-                                          return Obx(() {
-                                            return GestureDetector(
-                                              onTap: () {
-                                                bookViewController
-                                                    .currentSubjectIndex
-                                                    .value = index;
-                                              },
-                                              child: Padding(
-                                                padding: index == 0
-                                                    ? const EdgeInsets.fromLTRB(
-                                                        0, 8, 8, 8)
-                                                    : const EdgeInsets.all(8.0),
-                                                child: Column(
-                                                  children: [
-                                                    SizedBox(
-                                                      height: 120,
-                                                      width: 120,
-                                                      child: Stack(
-                                                        children: [
-                                                          Transform(
-                                                            transform:
-                                                                isSelctededIndex(
-                                                                        index)
-                                                                    ? Matrix4
-                                                                        .identity()
-                                                                    : Matrix4
-                                                                        .identity()
-                                                                  ..setEntry(3,
-                                                                      2, 0.01),
-                                                            child: Align(
-                                                              child: Image
-                                                                  .network(sub
-                                                                      .coverPage),
+                                      child: Scrollbar(
+                                        controller: scrollController,
+                                        child: ListView.builder(
+                                          controller: scrollController,
+                                          scrollDirection: Axis.horizontal,
+                                          itemBuilder: (context, index) {
+                                            Subject sub =
+                                                classBook.subjects[index];
+                                            return Obx(() {
+                                              return GestureDetector(
+                                                onTap: () {
+                                                  bookViewController
+                                                      .currentSubjectIndex
+                                                      .value = index;
+                                                },
+                                                child: Padding(
+                                                  padding: index == 0
+                                                      ? const EdgeInsets
+                                                          .fromLTRB(0, 8, 8, 8)
+                                                      : const EdgeInsets.all(
+                                                          8.0),
+                                                  child: Column(
+                                                    children: [
+                                                      SizedBox(
+                                                        height: 120,
+                                                        width: 120,
+                                                        child: Stack(
+                                                          children: [
+                                                            Transform(
+                                                              transform: isSelctededIndex(
+                                                                      index)
+                                                                  ? Matrix4
+                                                                      .identity()
+                                                                  : Matrix4
+                                                                      .identity()
+                                                                ..setEntry(
+                                                                    3, 2, 0.01),
+                                                              child: Align(
+                                                                child: Image
+                                                                    .network(sub
+                                                                        .coverPage),
+                                                              ),
                                                             ),
-                                                          ),
-                                                        ],
+                                                          ],
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Text(sub.subject)
-                                                  ],
+                                                      Text(sub.subject)
+                                                    ],
+                                                  ),
                                                 ),
-                                              ),
-                                            );
-                                          });
-                                        },
-                                        itemCount: classBook.subjects.length,
+                                              );
+                                            });
+                                          },
+                                          itemCount: classBook.subjects.length,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -208,6 +214,7 @@ class AllBookInClass extends StatelessWidget {
                                 bookViewController.currentSubjectIndex.value =
                                     0;
                               }
+                              ScrollController scr = ScrollController();
                               return Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -220,59 +227,65 @@ class AllBookInClass extends StatelessWidget {
                                             bookViewController:
                                                 bookViewController),
                                         Expanded(
-                                          child: ListView.builder(
-                                            scrollDirection: Axis.horizontal,
-                                            itemBuilder: (context, index) {
-                                              Subject sub =
-                                                  classBook.subjects[index];
-                                              return Obx(() {
-                                                return GestureDetector(
-                                                  onTap: () {
-                                                    bookViewController
-                                                        .currentSubjectIndex
-                                                        .value = index;
-                                                  },
-                                                  child: Padding(
-                                                    padding: index == 0
-                                                        ? const EdgeInsets
-                                                                .fromLTRB(
-                                                            0, 8, 8, 8)
-                                                        : const EdgeInsets.all(
-                                                            8.0),
-                                                    child: Column(
-                                                      children: [
-                                                        SizedBox(
-                                                          height: 120,
-                                                          width: 120,
-                                                          child: Stack(
-                                                            children: [
-                                                              Transform(
-                                                                transform: isSelctededIndex(
-                                                                        index)
-                                                                    ? Matrix4
-                                                                        .identity()
-                                                                    : Matrix4
-                                                                        .identity()
-                                                                  ..setEntry(3,
-                                                                      2, 0.01),
-                                                                child: Align(
-                                                                  child: Image
-                                                                      .network(sub
-                                                                          .coverPage),
+                                          child: Scrollbar(
+                                            controller: scr,
+                                            child: ListView.builder(
+                                              controller: scr,
+                                              scrollDirection: Axis.horizontal,
+                                              itemBuilder: (context, index) {
+                                                Subject sub =
+                                                    classBook.subjects[index];
+                                                return Obx(() {
+                                                  return GestureDetector(
+                                                    onTap: () {
+                                                      bookViewController
+                                                          .currentSubjectIndex
+                                                          .value = index;
+                                                    },
+                                                    child: Padding(
+                                                      padding: index == 0
+                                                          ? const EdgeInsets
+                                                                  .fromLTRB(
+                                                              0, 8, 8, 8)
+                                                          : const EdgeInsets
+                                                              .all(8.0),
+                                                      child: Column(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 120,
+                                                            width: 120,
+                                                            child: Stack(
+                                                              children: [
+                                                                Transform(
+                                                                  transform: isSelctededIndex(
+                                                                          index)
+                                                                      ? Matrix4
+                                                                          .identity()
+                                                                      : Matrix4
+                                                                          .identity()
+                                                                    ..setEntry(
+                                                                        3,
+                                                                        2,
+                                                                        0.01),
+                                                                  child: Align(
+                                                                    child: Image
+                                                                        .network(
+                                                                            sub.coverPage),
+                                                                  ),
                                                                 ),
-                                                              ),
-                                                            ],
+                                                              ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                        Text(sub.subject)
-                                                      ],
+                                                          Text(sub.subject)
+                                                        ],
+                                                      ),
                                                     ),
-                                                  ),
-                                                );
-                                              });
-                                            },
-                                            itemCount:
-                                                classBook.subjects.length,
+                                                  );
+                                                });
+                                              },
+                                              itemCount:
+                                                  classBook.subjects.length,
+                                            ),
                                           ),
                                         ),
                                       ],

@@ -7,7 +7,6 @@ class AdminPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Loading().upload();
     return Scaffold(
       body: Column(
         children: [

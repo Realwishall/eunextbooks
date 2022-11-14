@@ -1,6 +1,7 @@
 class DataBaseString {
   static String mainCollection = "eunextbook";
   static String classBook = "eunextbook/Database/classBook";
+  static String loginBook = "eunextbook/Database/loginBook";
   static String allBooks = "Database";
   static String subject = "subject";
   static String class1 = "Class 1";

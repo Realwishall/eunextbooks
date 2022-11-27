@@ -77,23 +77,71 @@ ClassBook Class6 = ClassBook(subjects: [
   //Class1SocialSafari
 ]);
 
-SubjectBook Class6MathMaster = SubjectBook(chapters: [
-  Chapter(testPaperGenrater: "", name: "Knowing Our Numbers"),
-  Chapter(testPaperGenrater: "", name: "Whole Number"),
-  Chapter(testPaperGenrater: "", name: "Negative Numbers and Integers"),
-  Chapter(testPaperGenrater: "", name: "Playing with Number"),
-  Chapter(testPaperGenrater: "", name: "Fraction  "),
-  Chapter(testPaperGenrater: "", name: "Introduction to Algebra  "),
-  Chapter(testPaperGenrater: "", name: "Equation "),
-  Chapter(testPaperGenrater: "", name: "Decimal"),
-  Chapter(testPaperGenrater: "", name: "Ratio and Proportion"),
-  Chapter(testPaperGenrater: "", name: "Perimeter, Area and Volume"),
-  Chapter(testPaperGenrater: "", name: "Practical Geometry"),
-  Chapter(testPaperGenrater: "", name: "Basic Geometry"),
-  Chapter(testPaperGenrater: "", name: "Understanding Elementary Shapes"),
-  Chapter(testPaperGenrater: "", name: "Symmetry"),
-  Chapter(testPaperGenrater: "", name: "Data Handling"),
-], teacherHandBook: "");
+SubjectBook Class6MathMaster = SubjectBook(
+    chapters: [
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F1-%20Knowing%20our%20number.docx?alt=media&token=5d8ed1db-b045-4cef-b85f-a77466820e89",
+          name: "Knowing Our Numbers"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F2.%20Whole%20Number.docx?alt=media&token=5fd1e09e-47e7-40fc-b472-9b2881fa72da",
+          name: "Whole Number"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F3.%20Negative%20numbers%20and%20Intergers.docx?alt=media&token=cf469a00-c28b-4297-96d7-ff1a4be2f20a",
+          name: "Negative Numbers and Integers"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F4-Playing%20with%20number.docx?alt=media&token=5766a0c1-f8ba-4c42-a641-6c14d9c2cab5",
+          name: "Playing with Number"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F5-%20Fraction.docx?alt=media&token=27865113-5411-4390-bea1-f67554161daa",
+          name: "Fraction  "),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F6-%20Introduction%20to%20algebra.docx?alt=media&token=d7f83339-e3a4-4282-a78d-2b06a30a2a19",
+          name: "Introduction to Algebra  "),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F7-%20Equation.docx?alt=media&token=bdb21576-8ae6-4a51-b693-2548237fddd6",
+          name: "Equation "),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F7-%20Equation.docx?alt=media&token=bdb21576-8ae6-4a51-b693-2548237fddd6",
+          name: "Decimal"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F9-%20Ratio%20and%20proportion.docx?alt=media&token=e85ac90d-d611-4b0c-ba8c-95e1c07144eb",
+          name: "Ratio and Proportion"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F10-Perimeter%20area%20and%20volume.docx?alt=media&token=b35a4a76-6ff3-4fc7-bb4f-484019eafae8",
+          name: "Perimeter, Area and Volume"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F11-%20Practical%20geometry.docx?alt=media&token=fef28137-bb64-423b-b2fc-b55d01482dca",
+          name: "Practical Geometry"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F12-Basic%20Geometry.docx?alt=media&token=6fae21db-1416-450c-a62c-e798f6361873",
+          name: "Basic Geometry"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F13-%20Understanding%20Elementary%20shapes.docx?alt=media&token=851a1bec-3883-43b4-bcb5-50c7e2cf9ad4",
+          name: "Understanding Elementary Shapes"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F14-Symmetry.docx?alt=media&token=26cd894d-78f9-4372-ab77-de7490d2399f",
+          name: "Symmetry"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F15%20Data%20handling.docx?alt=media&token=0e50261d-e0ac-4074-9679-f6bce7b5d4db",
+          name: "Data Handling"),
+    ],
+    teacherHandBook:
+        "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%206%2Fmath%20master%2F6th%20%20%20MATHS%20MASTER%20%20THB.pdf?alt=media&token=ed4833ca-9ae3-4026-9031-22e3475e8060");
 SubjectBook Class6BrainTrain = SubjectBook(chapters: [
   Chapter(testPaperGenrater: "", name: "Blossom Buddies"),
   Chapter(testPaperGenrater: "", name: "Incredible Creatures"),

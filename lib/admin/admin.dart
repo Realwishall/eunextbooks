@@ -14,7 +14,7 @@ class AdminPage extends StatelessWidget {
               onPressed: () {
                 Loading().upload();
               },
-              child: Text("Upload")),
+              child: const Text("Upload")),
           ElevatedButton(
               onPressed: () {
                 FirebaseAuth.instance.signOut();

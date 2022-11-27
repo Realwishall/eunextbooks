@@ -442,7 +442,7 @@ class DownloadButton extends StatelessWidget {
               },
               child: const Text("Download Ebook")),
         if (bookViewController.currentSubjectIndex.value != null &&
-            subBook.eBook.isNotEmpty)
+            subBook.teacherHandBook.isNotEmpty)
           TextButton(
               onPressed: () {
                 Download.down(subBook.teacherHandBook);

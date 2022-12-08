@@ -117,9 +117,13 @@ class AllBookInClass extends StatelessWidget {
                                                                 ..setEntry(
                                                                     3, 2, 0.01),
                                                               child: Align(
-                                                                child: Image
-                                                                    .network(sub
-                                                                        .coverPage),
+                                                                child: sub.coverPage
+                                                                            .length >
+                                                                        1
+                                                                    ? Image.network(sub
+                                                                        .coverPage)
+                                                                    : Text(sub
+                                                                        .subject),
                                                               ),
                                                             ),
                                                           ],
@@ -475,14 +479,22 @@ class SelectedBookCover extends StatelessWidget {
                 child: (bookViewController.currentSubjectIndex.value == null ||
                         bookViewController.classBook == null)
                     ? SizedBox()
-                    : Image.network(bookViewController
-                        .classBook!
-                        .subjects[bookViewController.currentSubjectIndex.value!]
-                        .coverPage)),
+                    : (getCurrentBook().coverPage.length > 1)
+                        ? Image.network(getCurrentBook().coverPage)
+                        : Text(
+                            getCurrentBook().subject,
+                            style: Get.textTheme.labelLarge!
+                                .copyWith(color: Colors.white),
+                          )),
           ),
         ),
       );
     });
+  }
+
+  Subject getCurrentBook() {
+    return bookViewController
+        .classBook!.subjects[bookViewController.currentSubjectIndex.value!];
   }
 }
 

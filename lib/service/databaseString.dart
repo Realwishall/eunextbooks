@@ -10,6 +10,8 @@ class DataBaseString {
   static String class4 = "Class 4";
   static String class5 = "Class 5";
   static String class6 = "Class 6";
+  static String class7 = "Class 7";
+  static String class8 = "Class 8";
 
   static String hindi = "Hindi";
   static String english = "english";

@@ -4,7 +4,7 @@ import '../../model/classBook.dart';
 import '../../model/subjectBook.dart';
 import '../../service/databaseString.dart';
 
-class Load1Class {
+class LoadClass1 {
   static loadClass() async {
     await FirebaseFirestore.instance
         .collection(DataBaseString.classBook)

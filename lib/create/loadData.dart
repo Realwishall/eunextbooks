@@ -3,7 +3,13 @@ import 'package:eunextbook/create/class1/class1.dart';
 import 'package:eunextbook/model/allbook.dart';
 import 'package:eunextbook/service/databaseString.dart';
 
+import 'class1/class2.dart';
+import 'class1/class3.dart';
+import 'class1/class4.dart';
+import 'class1/class5.dart';
 import 'class1/class6.dart';
+import 'class1/class7.dart';
+import 'class1/class8.dart';
 
 class Loading {
   upload() async {
@@ -12,12 +18,24 @@ class Loading {
         .collection(DataBaseString.mainCollection)
         .doc(DataBaseString.allBooks)
         .set(adminLoadAllBooks.toMap());
-    Load1Class.loadClass();
-    Load6Class.loadClass();
+    LoadClass1.loadClass();
+    LoadClass2.loadClass();
+    LoadClass3.loadClass();
+    LoadClass4.loadClass();
+    LoadClass5.loadClass();
+    LoadClass6.loadClass();
+    LoadClass7.loadClass();
+    LoadClass8.loadClass();
   }
 }
 
 AllBooks adminLoadAllBooks = AllBooks(allBooks: [
   AllBook(heading: "Class 1", id: "Class 1", image: ""),
+  AllBook(heading: "Class 2", id: "Class 2", image: ""),
+  AllBook(heading: "Class 3", id: "Class 3", image: ""),
+  AllBook(heading: "Class 4", id: "Class 4", image: ""),
+  AllBook(heading: "Class 5", id: "Class 5", image: ""),
   AllBook(heading: "Class 6", id: "Class 6", image: ""),
+  AllBook(heading: "Class 7", id: "Class 7", image: ""),
+  AllBook(heading: "Class 8", id: "Class 8", image: ""),
 ]);

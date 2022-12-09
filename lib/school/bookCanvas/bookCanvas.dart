@@ -116,15 +116,8 @@ class AllBookInClass extends StatelessWidget {
                                                                       .identity()
                                                                 ..setEntry(
                                                                     3, 2, 0.01),
-                                                              child: Align(
-                                                                child: sub.coverPage
-                                                                            .length >
-                                                                        1
-                                                                    ? Image.network(sub
-                                                                        .coverPage)
-                                                                    : Text(sub
-                                                                        .subject),
-                                                              ),
+                                                              child: bookShelf(
+                                                                  sub: sub),
                                                             ),
                                                           ],
                                                         ),
@@ -271,11 +264,8 @@ class AllBookInClass extends StatelessWidget {
                                                                         3,
                                                                         2,
                                                                         0.01),
-                                                                  child: Align(
-                                                                    child: Image
-                                                                        .network(
-                                                                            sub.coverPage),
-                                                                  ),
+                                                                  child: bookShelf(
+                                                                      sub: sub),
                                                                 ),
                                                               ],
                                                             ),
@@ -327,6 +317,29 @@ class AllBookInClass extends StatelessWidget {
 
   bool isSelctededIndex(int index) {
     return bookViewController.currentSubjectIndex.value == index;
+  }
+}
+
+class bookShelf extends StatelessWidget {
+  const bookShelf({
+    Key? key,
+    required this.sub,
+  }) : super(key: key);
+
+  final Subject sub;
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      child: sub.coverPage.length > 1
+          ? Image.network(sub.coverPage)
+          : Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(sub.subject),
+              ),
+            ),
+    );
   }
 }
 

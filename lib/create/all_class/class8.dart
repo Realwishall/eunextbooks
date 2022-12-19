@@ -56,12 +56,32 @@ class LoadClass8 {
 }
 
 ClassBook Class8 = ClassBook(subjects: [
-  Subject(coverPage: "", subject: "Science Era", id: "Class8Science"),
-  Subject(coverPage: "", subject: "Brain Train", id: "Class8BrainTrain"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fclass%208-min.jpg?alt=media&token=f661b831-25af-412c-95df-3eb5d2a339af",
+      subject: "Science Era",
+      id: "Class8Science"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fbrain%20train%20Class%208-min.jpg?alt=media&token=d33da0ff-141b-4d7f-b91f-aa836a06888c",
+      subject: "Brain Train",
+      id: "Class8BrainTrain"),
   //Subject(coverPage: "", subject: "EVS", id: "Class8EVS"),
-  Subject(coverPage: "", subject: "Maths Master", id: "Class8Maths"),
-  Subject(coverPage: "", subject: "Hindi Prabhat", id: "Class8Hindi"),
-  Subject(coverPage: "", subject: "Grammar Giggle", id: "Class8GrammarJingle"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2F8-min.jpg?alt=media&token=12d3cb95-da1f-4d51-8240-7ef651126b9a",
+      subject: "Maths Master",
+      id: "Class8Maths"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fhindi%20class%208-min.jpg?alt=media&token=dad939e9-5e02-4c65-be13-76c0ec49cff4",
+      subject: "Hindi Prabhat",
+      id: "Class8Hindi"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fgrammer%20giggle%20class%208-min.jpg?alt=media&token=efa0a37a-6d4c-4c74-b8e9-90d25505487a",
+      subject: "Grammar Giggle",
+      id: "Class8GrammarJingle"),
 
   //Subject(coverPage: "", subject: "Social Safari", id: "Class8SocialSafari"),
   //Class8SocialSafari

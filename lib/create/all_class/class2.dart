@@ -54,14 +54,38 @@ class LoadClass2 {
 }
 
 ClassBook Class2 = ClassBook(subjects: [
-  Subject(coverPage: "", subject: "Science Era", id: "Class2Science"),
-  Subject(coverPage: "", subject: "Brain Train", id: "Class2BrainTrain"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fscience%20era%20class%202-min.jpg?alt=media&token=6357c6cb-8946-46bd-90bf-07ef5cfdbb45",
+      subject: "Science Era",
+      id: "Class2Science"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fbrain%20train%20class%202-min.jpg?alt=media&token=329f4e32-dda9-4c73-9acb-80dc505cb551",
+      subject: "Brain Train",
+      id: "Class2BrainTrain"),
   //Subject(coverPage: "", subject: "EVS", id: "Class2EVS"),
-  Subject(coverPage: "", subject: "Maths Master", id: "Class2Maths"),
-  Subject(coverPage: "", subject: "Hindi Prabhat", id: "Class2Hindi"),
-  Subject(coverPage: "", subject: "Grammar Giggle", id: "Class2GrammarJingle"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fmath%20master%20class%202-min.jpg?alt=media&token=b01eef66-49a3-458b-be6c-d568a6b2f615",
+      subject: "Maths Master",
+      id: "Class2Maths"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fhindi%20class%202-min.jpg?alt=media&token=170396b0-c8e4-44fc-925e-288726821542",
+      subject: "Hindi Prabhat",
+      id: "Class2Hindi"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fgrammer%20giggle%20class%202-min.jpg?alt=media&token=2e18d8ef-7dc7-46a4-ab97-12ad73009522",
+      subject: "Grammar Giggle",
+      id: "Class2GrammarJingle"),
 
-  Subject(coverPage: "", subject: "Social Safari", id: "Class2SocialSafari"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fsocial%20safari%20class%202-min.jpg?alt=media&token=57990a13-9e3a-4dfb-bb8c-e9ecdf1fc956",
+      subject: "Social Safari",
+      id: "Class2SocialSafari"),
   //Class2SocialSafari
 ]);
 

@@ -20,6 +20,7 @@ void main() async {
   AuthWrapperController authWrapperController = AuthWrapperController();
   authWrapperController.getUser();
   // save_sample();
+
   runApp(MyApp(authWrapperController));
 }
 
@@ -44,6 +45,9 @@ class AuthWrapper extends StatelessWidget {
   AuthWrapperController authWrapperController;
   @override
   Widget build(BuildContext context) {
+    /* if (kDebugMode) {
+      Loading().upload();
+    }*/
     return Obx(() {
       switch (authWrapperController.userAuthState.value) {
         case AuthState.waiting:

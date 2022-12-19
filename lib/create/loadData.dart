@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:eunextbook/create/class1/class1.dart';
+import 'package:eunextbook/create/all_class/class1.dart';
 import 'package:eunextbook/model/allbook.dart';
 import 'package:eunextbook/service/databaseString.dart';
 
-import 'class1/class2.dart';
-import 'class1/class3.dart';
-import 'class1/class4.dart';
-import 'class1/class5.dart';
-import 'class1/class6.dart';
-import 'class1/class7.dart';
-import 'class1/class8.dart';
+import 'all_class/class2.dart';
+import 'all_class/class3.dart';
+import 'all_class/class4.dart';
+import 'all_class/class5.dart';
+import 'all_class/class6.dart';
+import 'all_class/class7.dart';
+import 'all_class/class8.dart';
 
 class Loading {
   upload() async {

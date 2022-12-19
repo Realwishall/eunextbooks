@@ -136,48 +136,156 @@ SubjectBook Class1Science = SubjectBook(chapters: [
       name: "The Sun, Earth and Moon"),
 ], teacherHandBook: "");
 
-SubjectBook Class1BrainTrain = SubjectBook(chapters: [
-  Chapter(testPaperGenrater: "", name: "Arresting Attires"),
-  Chapter(testPaperGenrater: "", name: "Big Cheese"),
-  Chapter(testPaperGenrater: "", name: "Best of the Fest"),
-  Chapter(testPaperGenrater: "", name: "Indian Symbols"),
-  Chapter(testPaperGenrater: "", name: "Tourist Places"),
-  Chapter(testPaperGenrater: "", name: "Hold your Hat"),
-  Chapter(testPaperGenrater: "", name: "National Flags"),
-  Chapter(testPaperGenrater: "", name: "Earthly Heavens"),
-  Chapter(testPaperGenrater: "", name: "Chunky Tongue"),
-  Chapter(testPaperGenrater: "", name: "Floral Queens"),
-  Chapter(testPaperGenrater: "", name: "Mini Me!"),
-  Chapter(testPaperGenrater: "", name: "Nature's Candy"),
-  Chapter(testPaperGenrater: "", name: "Pet's Paradise"),
-  Chapter(testPaperGenrater: "", name: "Plant the Plants"),
-  Chapter(testPaperGenrater: "", name: "Foodie Friends"),
-  Chapter(testPaperGenrater: "", name: "Homey Buddy"),
-  Chapter(testPaperGenrater: "", name: "Blue Clue"),
-  Chapter(testPaperGenrater: "", name: "Roots and Shoots"),
-  Chapter(testPaperGenrater: "", name: "Wheels on the Way!"),
-  Chapter(testPaperGenrater: "", name: "Living & Non - living Things"),
-  Chapter(testPaperGenrater: "", name: "Creative Computers"),
-  Chapter(testPaperGenrater: "", name: "Sports Fever"),
-  Chapter(testPaperGenrater: "", name: "Parlour Games"),
-  Chapter(testPaperGenrater: "", name: "Toy Treasures"),
-  Chapter(testPaperGenrater: "", name: "Titanic Gamers"),
-  Chapter(testPaperGenrater: "", name: "Flippers"),
-  Chapter(testPaperGenrater: "", name: "Sounds Same"),
-  Chapter(testPaperGenrater: "", name: "Thumbs up Words"),
-  Chapter(testPaperGenrater: "", name: "World within Words"),
-  Chapter(testPaperGenrater: "", name: "Hooked on Music"),
-  Chapter(testPaperGenrater: "", name: "Bollywood Beats"),
-  Chapter(testPaperGenrater: "", name: "Doodle Duds"),
-  Chapter(testPaperGenrater: "", name: "Little Angles"),
-  Chapter(testPaperGenrater: "", name: "Houses of God"),
-  Chapter(testPaperGenrater: "", name: "Locate the Locus"),
-  Chapter(testPaperGenrater: "", name: "Say Day!"),
-  Chapter(testPaperGenrater: "", name: "Curious Colours"),
-  Chapter(testPaperGenrater: "", name: "Things beyond Thinking"),
-  Chapter(testPaperGenrater: "", name: "Our Body"),
-  Chapter(testPaperGenrater: "", name: "Helping Hands"),
-], teacherHandBook: "");
+SubjectBook Class1BrainTrain = SubjectBook(
+    chapters: [
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2001%20Arresting%20Attires.docx?alt=media&token=2e875cbe-3e21-4ad6-be21-6c9fa42aacc0",
+          name: "Arresting Attires"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2002%20Big%20Cheese.docx?alt=media&token=fa42a744-435b-407f-8ac6-7a1ee3787786",
+          name: "Big Cheese"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2003%20Best%20of%20the%20fest.docx?alt=media&token=dfc69185-6c7c-41f7-b334-feaac8ab3ae9",
+          name: "Best of the Fest"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2004%20Indian%20Symbols.docx?alt=media&token=b59c8b67-474d-48a1-91ca-3235bc80dad8",
+          name: "Indian Symbols"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2005%20Tourist%20Places.docx?alt=media&token=540a9fd1-a6dd-4765-8653-584d38f04af6",
+          name: "Tourist Places"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2006%20Hold%20your%20Hat.docx?alt=media&token=abeacda1-8060-4e44-ad01-17a73217b611",
+          name: "Hold your Hat"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2007%20National%20Flags.docx?alt=media&token=642bf717-03dc-4587-ac04-2e22cffd34b1",
+          name: "National Flags"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2008%20Earthly%20Heavens.docx?alt=media&token=8a54606d-b43c-4dba-819f-c6046194a9f8",
+          name: "Earthly Heavens"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2009%20Chunky%20Tongue.docx?alt=media&token=2099f614-a2ba-4f6e-bb6b-15ecb320c3aa",
+          name: "Chunky Tongue"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2010%20Floral%20Queens.docx?alt=media&token=dc3431fe-6a42-4b98-89b5-594f51023f60",
+          name: "Floral Queens"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2011%20Mini%20Me!.docx?alt=media&token=f8a3ff7d-aaac-4788-bca6-31f48613bc93",
+          name: "Mini Me!"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2012%20Nature%E2%80%99s%20Candy.docx?alt=media&token=87201f90-45a5-4f2a-a7f9-554e1b3ccd75",
+          name: "Nature's Candy"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2013%20Pet%E2%80%99s%20Paradise.docx?alt=media&token=8eb25783-73b9-4292-93f6-4a295128fe0a",
+          name: "Pet's Paradise"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2014%20Plant%20the%20Plants.docx?alt=media&token=9c693ca2-f489-43b1-a5d9-a934edde494b",
+          name: "Plant the Plants"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2015%20Foodie%20Friends.docx?alt=media&token=cc12388a-b980-4e09-8673-cd776a6a2fa5",
+          name: "Foodie Friends"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2016%20Homey%20Buddy.docx?alt=media&token=6a9cc86e-902d-4a3c-a330-eed57435437c",
+          name: "Homey Buddy"),
+      Chapter(testPaperGenrater: "", name: "Blue Clue"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2018%20Roots%20and%20Shoots.docx?alt=media&token=dafb5fcc-863e-44d2-8495-572da2a5a48a",
+          name: "Roots and Shoots"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2019%20Wheels%20on%20the%20Way!.docx?alt=media&token=f30ec2c2-91e4-4820-aa72-766ecda980e2",
+          name: "Wheels on the Way!"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2020%20Living%20%26%20Non-Living%20Things.docx?alt=media&token=a09273d8-3c83-47d2-8a5a-7b4d0e1e3018",
+          name: "Living & Non - living Things"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2021%20Creative%20Computers.docx?alt=media&token=2fd0ba03-dcca-4947-af17-773fc7b4ab6e",
+          name: "Creative Computers"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2022%20Sports%20Fever.docx?alt=media&token=cb054dbc-7b44-46cc-8daa-317648b7d63f",
+          name: "Sports Fever"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2023%20Parlour%20Games.docx?alt=media&token=ed0178e5-5eb5-419f-b4fc-4ab1497c2cc2",
+          name: "Parlour Games"),
+      Chapter(testPaperGenrater: "", name: "Toy Treasures"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2025%20Titanic%20Gamers.docx?alt=media&token=ba59cfa5-49ed-4887-87a2-2ce4628a2ccd",
+          name: "Titanic Gamers"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2026%20Flippers.docx?alt=media&token=8713db8f-8129-4640-810e-94276de1552d",
+          name: "Flippers"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2027%20Sounds%20Same.docx?alt=media&token=1ba68935-2232-49ab-994e-5878e7700473",
+          name: "Sounds Same"),
+      Chapter(testPaperGenrater: "", name: "Thumbs up Words"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2029%20World%20within%20Words.docx?alt=media&token=9d51a9dd-e15f-4301-aa2c-14643d4ed285",
+          name: "World within Words"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2030%20Hooked%20on%20Music.docx?alt=media&token=9975a65d-805d-41d3-be0a-4f79e15d48de",
+          name: "Hooked on Music"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2031%20Bollywood%20Beats.docx?alt=media&token=379767dc-98da-4161-8b42-838ec1777e67",
+          name: "Bollywood Beats"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2032%20Doodle%20Dudes.docx?alt=media&token=9a008ca5-5b1d-4d9e-9902-40266188121a",
+          name: "Doodle Duds"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2033%20Little%20Angels.docx?alt=media&token=534d0ebc-a7fa-4462-bfd8-4f69e19ddfe1",
+          name: "Little Angles"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2034%20Houses%20of%20God.docx?alt=media&token=571177db-f4a6-4e63-a348-773ca26804cb",
+          name: "Houses of God"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2035%20Locate%20the%20Locus.docx?alt=media&token=e193e858-8700-457e-8f37-cc257611a1a5",
+          name: "Locate the Locus"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2036%20Say%20Day!.docx?alt=media&token=b128cba9-9697-43f4-b30f-077267627b4c",
+          name: "Say Day!"),
+      Chapter(testPaperGenrater: "", name: "Curious Colours"),
+      Chapter(testPaperGenrater: "", name: "Things beyond Thinking"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2039%20Our%20Body.docx?alt=media&token=cdc3653c-4c1e-44da-8f4b-12d3e1a1eaea",
+          name: "Our Body"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FClass%201%20Brain%20Train%2040%20Helping%20Hands.docx?alt=media&token=dc16870c-a46b-41f2-b7a4-d7e948ef629e",
+          name: "Helping Hands"),
+    ],
+    teacherHandBook:
+        "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%201%2Fbrain_train%2FBrain%20Train%20THB%20Class%201.pdf?alt=media&token=d75bdfb4-d51e-4cfd-988b-a0fab9c82956");
 
 SubjectBook Class1EVS = SubjectBook(teacherHandBook: "", chapters: [
   Chapter(

@@ -56,14 +56,38 @@ class LoadClass3 {
 }
 
 ClassBook Class3 = ClassBook(subjects: [
-  Subject(coverPage: "", subject: "Science Era", id: "Class3Science"),
-  Subject(coverPage: "", subject: "Brain Train", id: "Class3BrainTrain"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fscience%20era%20class%203-min.jpg?alt=media&token=6d945645-d3fd-43c9-bd6f-85b04dbb8e60",
+      subject: "Science Era",
+      id: "Class3Science"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fbrain%20train%20class%203-min.jpg?alt=media&token=bbe044a7-5170-4fea-a051-b7f9dcd5af49",
+      subject: "Brain Train",
+      id: "Class3BrainTrain"),
   //Subject(coverPage: "", subject: "EVS", id: "Class3EVS"),
-  Subject(coverPage: "", subject: "Maths Master", id: "Class3Maths"),
-  Subject(coverPage: "", subject: "Hindi Prabhat", id: "Class3Hindi"),
-  Subject(coverPage: "", subject: "Grammar Giggle", id: "Class3GrammarJingle"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fmath%20master%20class%203-min.jpg?alt=media&token=22acb822-479e-46b8-8b16-bdec1bb64209",
+      subject: "Maths Master",
+      id: "Class3Maths"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fhindi%20class%203-min.jpg?alt=media&token=1591232f-ba4b-4f08-a6eb-079ac7680eaa",
+      subject: "Hindi Prabhat",
+      id: "Class3Hindi"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fgrammer%20giggle%20class%203-min.jpg?alt=media&token=d76d51f8-f419-44d6-af3e-4b5d4b9d278a",
+      subject: "Grammar Giggle",
+      id: "Class3GrammarJingle"),
 
-  Subject(coverPage: "", subject: "Social Safari", id: "Class3SocialSafari"),
+  Subject(
+      coverPage:
+          "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/images%2FallClassImages%2Fsocial%20safari%20class%203-min.jpg?alt=media&token=7a440d2c-ba31-46a8-a8c4-e4174ad8aefb",
+      subject: "Social Safari",
+      id: "Class3SocialSafari"),
   //Class3SocialSafari
 ]);
 
@@ -396,22 +420,76 @@ SubjectBook Class3GrammarJingle = SubjectBook(
     teacherHandBook:
         "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2Fenglish%2Fthb%20of%20class%203.pdf?alt=media&token=44b19142-b994-4a05-968b-f00f25d027eb");
 
-SubjectBook Class3SocialSafari = SubjectBook(chapters: [
-  Chapter(testPaperGenrater: "", name: "The Universe"),
-  Chapter(testPaperGenrater: "", name: "Our Earth"),
-  Chapter(testPaperGenrater: "", name: "Our Environment"),
-  Chapter(testPaperGenrater: "", name: "My India"),
-  Chapter(testPaperGenrater: "", name: "Northern India"),
-  Chapter(testPaperGenrater: "", name: "Western India"),
-  Chapter(testPaperGenrater: "", name: "Eastern India"),
-  Chapter(testPaperGenrater: "", name: "Southern India"),
-  Chapter(testPaperGenrater: "", name: "Our Villages"),
-  Chapter(testPaperGenrater: "", name: "Food"),
-  Chapter(testPaperGenrater: "", name: "What We Wear?"),
-  Chapter(testPaperGenrater: "", name: "Occupation"),
-  Chapter(testPaperGenrater: "", name: "The Festival of India"),
-  Chapter(testPaperGenrater: "", name: "Means of Transport"),
-  Chapter(testPaperGenrater: "", name: "Our Goverment"),
-  Chapter(testPaperGenrater: "", name: "Early Humans 1"),
-  Chapter(testPaperGenrater: "", name: "Early Humans 2"),
-], teacherHandBook: "");
+SubjectBook Class3SocialSafari = SubjectBook(
+    chapters: [
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F1%20The%20Universe.docx?alt=media&token=4d0dde4c-6b7c-4419-b4df-7bab4868ee4d",
+          name: "The Universe"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F2%20Our%20Earth.docx?alt=media&token=8bd09f05-10a0-42b4-bb00-0f0c4d6aaddf",
+          name: "Our Earth"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F3%20Our%20Environment.docx?alt=media&token=98aa6365-1358-4771-99b6-ec9489c678cf",
+          name: "Our Environment"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F4%20My%20India.docx?alt=media&token=a25d7a21-42a8-4a6f-a859-bfeeca11ec3f",
+          name: "My India"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F5%20Northern%20India.docx?alt=media&token=3bd23ac9-ae3e-4ab7-b467-01608edbaf2b",
+          name: "Northern India"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F6%20Western%20India.docx?alt=media&token=909c0c38-f637-403e-95f8-0bfadf8e7c5b",
+          name: "Western India"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F7%20Eastern%20India.docx?alt=media&token=e40c70d9-dc94-4fd6-80e1-52c97dd737cf",
+          name: "Eastern India"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F8%20Southern%20India.docx?alt=media&token=934b4bb6-a487-4d0c-b545-0a8025c7f1ae",
+          name: "Southern India"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F9%20Our%20Villages.docx?alt=media&token=5ef2f1f7-c04d-4050-8a13-78b8fc15f0a1",
+          name: "Our Villages"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F10%20food.docx?alt=media&token=ab8e7b0e-14b9-4374-987e-552419915b6b",
+          name: "Food"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F11%20What%20we%20wear.docx?alt=media&token=53a63315-db86-4853-896e-0644f58587ad",
+          name: "What We Wear?"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F12%20Occupation.docx?alt=media&token=44460cbf-1715-45a1-9f70-e2f1b8aa4d72",
+          name: "Occupation"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F13%20the%20festivals%20of%20india.docx?alt=media&token=e39abba3-c4a0-4616-b8d2-19385d01a596",
+          name: "The Festival of India"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F14%20Means%20of%20Transport.docx?alt=media&token=99e9b705-73f0-4f8f-9af6-1b7c0e78697b",
+          name: "Means of Transport"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F15%20our%20government.docx?alt=media&token=1d4ccf96-51f1-4487-bf22-8d2859c73be0",
+          name: "Our Goverment"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F16%20Early%20Humans%201.docx?alt=media&token=50084223-f786-490a-a2cd-8be68808041b",
+          name: "Early Humans 1"),
+      Chapter(
+          testPaperGenrater:
+              "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2F17%20Early%20Humans%202.docx?alt=media&token=b0b37f55-39ef-4404-80a3-cd8738bda801",
+          name: "Early Humans 2"),
+    ],
+    teacherHandBook:
+        "https://firebasestorage.googleapis.com/v0/b/allquestionbackup.appspot.com/o/books%2Fclass%203%2FSocial%20Safari%2FSocial%20safari%20THB%203%20main%20ANS.pdf?alt=media&token=516a514f-5f47-4a51-baab-0a8ae11199de");

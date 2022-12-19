@@ -88,7 +88,7 @@ class SideBar extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(flex: 2),
+            const Spacer(flex: 2),
             ...canvasController.allBooks!.allBooks
                 .mapIndexed((index, e) => Obx(() {
                       return BookRow(
@@ -99,13 +99,13 @@ class SideBar extends StatelessWidget {
                       );
                     }))
                 .toList(),
-            Spacer(flex: 1),
+            const Spacer(flex: 1),
             TextButton(
                 onPressed: () {
                   FirebaseAuth.instance.signOut();
                 },
                 child: const Text("Logout")),
-            Spacer(flex: 1),
+            const Spacer(flex: 1),
           ],
         ),
       ),

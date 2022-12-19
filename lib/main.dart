@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oktoast/oktoast.dart';
 
-import 'admin/admin.dart';
+import 'admin/admin/loadData.dart';
 import 'firebase_options.dart';
 import 'login/login.dart';
 import 'waiting/waiting.dart';
@@ -45,7 +45,7 @@ class AuthWrapper extends StatelessWidget {
   AuthWrapperController authWrapperController;
   @override
   Widget build(BuildContext context) {
-    /* if (kDebugMode) {
+    /*   if (kDebugMode) {
       Loading().upload();
     }*/
     return Obx(() {

@@ -9,6 +9,11 @@ class FireReadApi {
         DataBaseString.mainCollection, DataBaseString.allBooks);
   }
 
+  static Stream<DocumentSnapshot<Map<String, dynamic>>?> getVideoList(
+      String videoBookID) {
+    return FirestoreEntry.getStream(DataBaseString.euNextVideo, videoBookID);
+  }
+
   static Stream<DocumentSnapshot<Map<String, dynamic>>?> getThisClassBooks(
       String classID) {
     return FirestoreEntry.getStream(DataBaseString.classBook, classID);

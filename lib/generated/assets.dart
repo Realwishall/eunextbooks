@@ -6,4 +6,5 @@ class Assets {
   static const String assetBook2 = 'asset/book2.png';
   static const String assetLogo = 'asset/logo.png';
   static const String assetPageee = 'asset/pageee.png';
+  static const String assetYoutube = 'asset/youtube.png';
 }

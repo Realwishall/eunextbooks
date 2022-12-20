@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eunextbook/create/all_class/class1.dart';
+import 'package:eunextbook/create/videoList/load_video.dart';
 import 'package:eunextbook/model/allbook.dart';
 import 'package:eunextbook/service/databaseString.dart';
 
@@ -26,6 +27,7 @@ class Loading {
     LoadClass6.loadClass();
     LoadClass7.loadClass();
     LoadClass8.loadClass();
+    LoadVideo.load();
   }
 }
 

@@ -8,14 +8,15 @@ import 'package:get/get.dart';
 import 'package:oktoast/oktoast.dart';
 
 import 'admin/admin.dart';
-import 'create/loadData.dart';
 import 'firebase_options.dart';
 import 'login/login.dart';
 import 'waiting/waiting.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  if (kDebugMode) {
+    // Loading().upload();
+  }
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -45,7 +46,6 @@ class AuthWrapper extends StatelessWidget {
   final AuthWrapperController authWrapperController;
   @override
   Widget build(BuildContext context) {
-    Loading().upload();
     return Obx(() {
       switch (authWrapperController.userAuthState.value) {
         case AuthState.waiting:

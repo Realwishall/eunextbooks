@@ -72,13 +72,31 @@ VideoData GrammarGiggleClass1 = VideoData(
     ]);
 
 VideoData HindiPrabhatClass1 = VideoData(
-    heading: "HindiPrabhat",
+    heading: "Hindi Prabhat",
     info:
         "EuNext’s Hindi Prabhat is an informative and inclusive book of Hindi Grammar especially designed for learners to learn this grace full anguage in an easy way. This book will make learners well-versed with Hindi language.",
     className: "HindiPrabhat, Class-1",
     videoID: [
-      "w0DdXpjbLsA",
-      "EnSIkaIECMiOmarE",
+      "3Ye7edrNyVo",
+      "7ZTBTSyNSJE",
+      "jbnkVVDFvLw",
+      "m_VYkmytbjE",
+      "bwnF7parrpg",
+      "0KvUQ6uMLmY",
+      "oNv6J0pGBAA",
+      "f3EPUVoGefA",
+      "II0JF29-blY",
+      "MfXKKDJzA70",
+      "eqOWtESuzMk",
+      "DRgGawepyIo",
+      "tBrpXegx7-c",
+      "oj1yCxGzy-o",
+      "GgCqLuswOp4",
+      "AaV3LGdpkMA",
+      "T4WSic-MqeI",
+      "ZV0xJASgeUk",
+      "HESDHhoPUgY",
+      "KgXEq54VMYQ",
     ]);
 
 VideoData ScienceEraClass1 = VideoData(
@@ -119,7 +137,7 @@ VideoData MathsMasterClass1 = VideoData(
     ]);
 
 VideoData SocialSafariClass1 = VideoData(
-    heading: "Science Era",
+    heading: "Social Safari",
     info:
         "Curiosity and science are synonymous with each other. EuNext's Science Era series aims to develop curiosity about 'why things are, the way they are' among the young learners. The world looks up to Science for finding answers to discoveries and innovations for the betterment of lives.",
     className: "ScienceEra, Class-1",
